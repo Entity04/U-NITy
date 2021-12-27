@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "294754084814",
+    "project_id": "u-nity-7108b",
+    "storage_bucket": "u-nity-7108b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294754084814:android:a1d8f7e4d4edc6b41fad9f",
+        "android_client_info": {
+          "package_name": "com.entity.unity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294754084814-d7g253n02djird78eda03nh8cc1mop2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnT27F6jmfR7YYnNE-2TaIqswo0j6xb_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294754084814-d7g253n02djird78eda03nh8cc1mop2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
