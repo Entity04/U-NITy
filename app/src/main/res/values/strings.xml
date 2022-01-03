@@ -7,4 +7,10 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="password">Password</string>
     <string name="register">Don\'t have an account? Register</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="nav_profile">My Profile</string>
+    <string name="nav_signOut">Sign Out</string>
 </resources>
