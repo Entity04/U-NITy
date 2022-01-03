@@ -6,5 +6,5 @@
     <string name="email">Email</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="password">Password</string>
-    <string name="or_login_with">OR LOGIN WITH</string>
+    <string name="register">Don\'t have an account? Register</string>
 </resources>
