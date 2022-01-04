@@ -15,10 +15,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
         setContentView(R.layout.activity_forgot_password)
 
         val tvLogin: TextView = findViewById(R.id.tvLogin)
-        val etForgotPassEmail: EditText = findViewById(R.id.etForgotPassEmail)
-        val btnForgotPass: Button = findViewById(R.id.btnForgotPass)
+        val etForgotPassEmail: EditText = findViewById(R.id.etEmail)
+        val btnReset: Button = findViewById(R.id.btnReset)
 
-        btnForgotPass.setOnClickListener {
+        btnReset.setOnClickListener {
             val email: String = etForgotPassEmail.text.toString().trim { it <= ' ' }
 
             when {

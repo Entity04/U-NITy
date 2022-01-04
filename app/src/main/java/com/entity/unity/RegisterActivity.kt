@@ -16,9 +16,9 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val btnRegister: Button =findViewById(R.id.btnForgotPass)
+        val btnRegister: Button =findViewById(R.id.btnRegister)
         val tvLogin: TextView =findViewById(R.id.tvLogin)
-        val etRegisterEmail: EditText =findViewById(R.id.etForgotPassEmail)
+        val etRegisterEmail: EditText =findViewById(R.id.etRegisterEmail)
         val etRegisterPassword: EditText =findViewById(R.id.etRegisterPassword)
 
         tvLogin.setOnClickListener{

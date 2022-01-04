@@ -1,16 +1,20 @@
 <resources>
     <string name="app_name">U-NITy</string>
-    <string name="login">Login</string>
+    <string name="login_text">Login</string>
     <string name="example_email">example@nitj.ac.in</string>
     <string name="enter_you_password">Enter you password</string>
     <string name="email">Email</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="password">Password</string>
     <string name="register">Don\'t have an account? Register</string>
+    <string name="login">Already have an account? Login</string>
+    <string name="register_text">Register</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="nav_profile">My Profile</string>
     <string name="nav_signOut">Sign Out</string>
+    <string name="reset">Reset</string>
+    <string name="back_to_login">Back to Login</string>
 </resources>

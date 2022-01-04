@@ -18,11 +18,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/loginText"
+        android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="84dp"
-        android:text="@string/login"
+        android:text="@string/login_text"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -48,10 +48,10 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginText" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etRegisterPassword"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
@@ -89,7 +89,7 @@
         android:text="@string/password"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintBottom_toTopOf="@+id/etRegisterPassword"
         app:layout_constraintEnd_toEndOf="@+id/emailText"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/emailText" />
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.731"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etRegisterPassword" />
 
     <ImageView
         android:id="@+id/wave2"
@@ -125,7 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:background="@drawable/button_bg_2"
-        android:text="@string/login"
+        android:text="@string/login_text"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textColor="@color/white"
