@@ -21,4 +21,6 @@
     <string name="exercise">Exercise</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="post_title">Enter Title</string>
+    <string name="post_description">Enter Description</string>
 </resources>
