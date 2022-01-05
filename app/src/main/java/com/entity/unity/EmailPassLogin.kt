@@ -51,7 +51,7 @@ class EmailPassLogin : AppCompatActivity() {
                     val password: String = etPassword.text.toString().trim { it <= ' ' }
 
                     FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener({ task ->
+                        .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 val firebaseUser: FirebaseUser = task.result!!.user!!
 
@@ -64,7 +64,10 @@ class EmailPassLogin : AppCompatActivity() {
                                 val intent = Intent(this, MainActivity2::class.java)
                                 intent.flags =
                                     Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                intent.putExtra("user_id", FirebaseAuth.getInstance().currentUser!!.uid)
+                                intent.putExtra(
+                                    "user_id",
+                                    FirebaseAuth.getInstance().currentUser!!.uid
+                                )
                                 intent.putExtra("email_id", email)
                                 startActivity(intent)
                                 finish()
@@ -76,7 +79,7 @@ class EmailPassLogin : AppCompatActivity() {
                                 ).show()
 
                             }
-                        })
+                        }
                 }
 
             }

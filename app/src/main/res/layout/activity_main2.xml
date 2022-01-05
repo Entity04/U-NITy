@@ -14,7 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/nav_view"
                 android:layout_width="0dp"
@@ -32,6 +31,7 @@
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="45dp"
                 app:defaultNavHost="true"
                 app:layout_constraintBottom_toTopOf="@id/nav_view"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -42,6 +42,7 @@
                 app:navGraph="@navigation/mobile_navigation" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/main_sidebar"
             android:layout_width="wrap_content"
@@ -49,7 +50,6 @@
             android:layout_gravity="start"
             app:headerLayout="@layout/nav_header_main"
             app:menu="@menu/activity_main_drawer"/>
-
 
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>
