@@ -1,5 +1,6 @@
 package com.entity.unity.ui.health
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.entity.unity.CreateFeed
 import com.entity.unity.databinding.FragmentHealthBinding
 
 class HealthFragment : Fragment() {
@@ -26,14 +28,13 @@ class HealthFragment : Fragment() {
     ): View? {
         healthViewModel =
             ViewModelProvider(this).get(HealthViewModel::class.java)
-
         _binding = FragmentHealthBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHealth
-        healthViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        binding.addFeed.setOnClickListener {
+            val intent= Intent(requireActivity(),CreateFeed::class.java)
+            startActivity(intent)
+        }
         return root
     }
 

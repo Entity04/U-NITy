@@ -7,12 +7,9 @@
             android:icon="@drawable/ic_nav_user"
             android:title="@string/nav_profile"
             />
-
         <item
             android:id="@+id/nav_sign_out"
             android:icon="@drawable/ic_nav_sign_out"
             android:title="@string/nav_signOut" />
     </group>
-
-
 </menu>
