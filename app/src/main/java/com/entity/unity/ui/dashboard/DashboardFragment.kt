@@ -25,6 +25,7 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         dashboardViewModel =
             ViewModelProvider(this).get(DashboardViewModel::class.java)
 

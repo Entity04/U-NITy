@@ -6,8 +6,6 @@
             android:id="@+id/nav_my_profile"
             android:icon="@drawable/ic_nav_user"
             android:title="@string/nav_profile"
-
-
             />
 
         <item

@@ -17,4 +17,6 @@
     <string name="nav_signOut">Sign Out</string>
     <string name="reset">Reset</string>
     <string name="back_to_login">Back to Login</string>
+    <string name="mental_health">Mental Health</string>
+    <string name="exercise">Exercise</string>
 </resources>
