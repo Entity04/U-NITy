@@ -1,13 +1,13 @@
-package com.entity.unity.ui.home
+package com.entity.unity.ui.health
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class HealthViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is health Fragment"
     }
     val text: LiveData<String> = _text
 }

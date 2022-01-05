@@ -1,13 +1,13 @@
-package com.entity.unity.ui.dashboard
+package com.entity.unity.ui.exercise
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class ExerciseViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "This is Exercise Fragment"
     }
     val text: LiveData<String> = _text
 }

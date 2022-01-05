@@ -2,10 +2,13 @@ package com.entity.unity
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Html
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -19,8 +22,10 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity2 : AppCompatActivity() {
 
     private lateinit var binding: ActivityMain2Binding
-    lateinit var appBarConfiguration: AppBarConfiguration
-    lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var navController: NavController
+    private lateinit var toggle: ActionBarDrawerToggle
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -40,9 +45,25 @@ class MainActivity2 : AppCompatActivity() {
         )
         binding.navView.setupWithNavController(navController)
 
+        toggle = ActionBarDrawerToggle(this,binding.container,R.string.open,R.string.close)
+        toggle.isDrawerIndicatorEnabled = true
+        binding.container.addDrawerListener(toggle)
+        toggle.syncState()
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        binding.mainSidebar.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.nav_sign_out -> {
+                    FirebaseAuth.getInstance().signOut()
+                    startActivity(Intent(this, EmailPassLogin::class.java))
+                    finish()
+                }
+            }
+            true
+        }
 
 
-        //
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
@@ -60,5 +81,9 @@ class MainActivity2 : AppCompatActivity() {
         } else {
             super.onBackPressed()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return toggle.onOptionsItemSelected(item)||super.onOptionsItemSelected(item)
     }
 }

@@ -19,4 +19,6 @@
     <string name="back_to_login">Back to Login</string>
     <string name="mental_health">Mental Health</string>
     <string name="exercise">Exercise</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
