@@ -59,6 +59,7 @@ class MainActivity2 : AppCompatActivity() {
                     startActivity(Intent(this, EmailPassLogin::class.java))
                     finish()
                 }
+                R.id.nav_feedback -> startActivity(Intent(this,FeedbackActivity::class.java))
             }
             true
         }

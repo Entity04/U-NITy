@@ -10,12 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNITy">
         <activity
+            android:name=".FeedbackActivity"
+            android:exported="false" />
+        <activity
             android:name=".CreateFeed"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
             android:exported="true"
-            android:label="@string/title_activity_main2"></activity>
+            android:label="@string/title_activity_main2" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false"
