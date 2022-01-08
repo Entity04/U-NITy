@@ -9,18 +9,18 @@
         android:background="@drawable/btn_bg"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/txt_recieve_message"
+            android:id="@+id/txt_sent_message"
             android:layout_width="wrap_content"
             android:paddingLeft="10dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:paddingRight="10dp"
             android:layout_height="wrap_content"
-            android:text="This is sent message"
+            android:text="This is Receive message"
             android:textColor="@color/white"
             android:textSize="18sp" />
 

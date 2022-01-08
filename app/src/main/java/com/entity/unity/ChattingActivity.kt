@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.entity.unity.model.MessageData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -17,7 +18,7 @@ class ChattingActivity : AppCompatActivity() {
     private lateinit var messageBox: EditText
     private lateinit var sendButton: ImageView
     private lateinit var messageAdapter: MessageAdapter
-    private lateinit var messageList: ArrayList<com.entity.unity.model.Message>
+    private lateinit var messageList: ArrayList<com.entity.unity.model.MessageData>
     private lateinit var mDbRef: DatabaseReference
 
     var recieverRoom: String?=null
@@ -64,7 +65,7 @@ class ChattingActivity : AppCompatActivity() {
                     messageList.clear()
 
                     for (postSnapshot in snapshot.children){
-                        val message=postSnapshot.getValue(Message::class.java)
+                        val message=postSnapshot.getValue(MessageData::class.java)
                         messageList.add(message!!)
 
                     }
@@ -81,7 +82,7 @@ class ChattingActivity : AppCompatActivity() {
 
         sendButton.setOnClickListener {
             val message = messageBox.text.toString()
-            val messageObject = Message(message, senderUid)
+            val messageObject = MessageData(message, senderUid)
 
             mDbRef.child("chats").child(senderRoom!!).child("messages").push()
                 .setValue(messageObject).addOnSuccessListener {
