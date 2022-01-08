@@ -1,67 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/ll1"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto_light"
-            android:text="@string/add_a_post"
-            android:textSize="16sp" />
-
-        <Button
             android:id="@+id/post"
-            android:layout_width="90dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
-            android:text="@string/post"
-            android:backgroundTint="@color/colorPrimary"
-            android:textAlignment="textEnd"
-            android:textColor="@color/white"
-            android:textSize="17sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:text="POST"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
             android:textStyle="bold" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:id="@+id/postImage"
+            android:src="@drawable/ic_launcher_foreground"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:maxLines="5"
+            android:hint="@string/post_description"
+            android:id="@+id/feedDescription"/>
     </LinearLayout>
-
-    <EditText
-        android:id="@+id/feedTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="15dp"
-        android:background="@null"
-        android:fontFamily="@font/roboto_light"
-        android:gravity="top"
-        android:maxLines="10"
-        android:hint="@string/what_do_you_want_to_post"
-        app:layout_constraintTop_toBottomOf="@id/ll1" />
-
-    <EditText
-        android:id="@+id/feedDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="15dp"
-        android:background="@null"
-        android:fontFamily="@font/roboto_light"
-        android:gravity="top"
-        android:maxLines="10"
-        android:hint="@string/post_description"
-        app:layout_constraintTop_toBottomOf="@id/feedTitle" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

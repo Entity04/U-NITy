@@ -45,15 +45,14 @@ class MainActivity2 : AppCompatActivity() {
         )
         binding.navView.setupWithNavController(navController)
 
-        toggle = ActionBarDrawerToggle(this,binding.container,R.string.open,R.string.close)
+        toggle = ActionBarDrawerToggle(this, binding.container, R.string.open, R.string.close)
         toggle.isDrawerIndicatorEnabled = true
         binding.container.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         binding.mainSidebar.setNavigationItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.nav_sign_out -> {
                     FirebaseAuth.getInstance().signOut()
                     startActivity(Intent(this, EmailPassLogin::class.java))
@@ -62,8 +61,6 @@ class MainActivity2 : AppCompatActivity() {
             }
             true
         }
-
-
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
@@ -84,6 +81,6 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return toggle.onOptionsItemSelected(item)||super.onOptionsItemSelected(item)
+        return toggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item)
     }
 }
