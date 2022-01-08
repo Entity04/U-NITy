@@ -11,6 +11,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/ivDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -33,13 +34,31 @@
         android:padding="8dp"
         android:orientation="vertical">
 
-        <ImageView
+        <FrameLayout
+
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:id="@+id/postImage"
-            android:src="@drawable/ic_launcher_foreground"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/postImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:background="@color/image_background"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/iv_add_post_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:src="@drawable/ic_add_a_photo" />
+        </FrameLayout>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

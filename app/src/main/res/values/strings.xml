@@ -26,4 +26,7 @@
     <string name="add_a_post">Add a Post</string>
     <string name="post">POST</string>
     <string name="what_do_you_want_to_post">What do you want to post</string>
+    <string name="title_select_image">Select Image Action</string>
+    <string name="lbl_camera">Camera</string>
+    <string name="lbl_gallery">Gallery</string>
 </resources>

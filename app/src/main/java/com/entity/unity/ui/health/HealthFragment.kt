@@ -40,15 +40,21 @@ class HealthFragment : Fragment() {
         _binding = FragmentHealthBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+
+        return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.addFeed.setOnClickListener {
             val intent= Intent(requireActivity(),CreateFeed::class.java)
             startActivity(intent)
         }
 
         postsList=ArrayList()
-        adapter= FeedAdapter(postsList,requireContext())
+        adapter= FeedAdapter(postsList,this@HealthFragment)
         feedRecyclerView=binding.feedRecyclerview
-        feedRecyclerView.layoutManager= LinearLayoutManager(requireContext())
+        feedRecyclerView.layoutManager= LinearLayoutManager(requireActivity())
         feedRecyclerView.adapter=adapter
         val db= FirebaseFirestore.getInstance()
 
@@ -64,7 +70,6 @@ class HealthFragment : Fragment() {
             }
             adapter.notifyDataSetChanged()
         }
-        return root
     }
 
     override fun onDestroyView() {
