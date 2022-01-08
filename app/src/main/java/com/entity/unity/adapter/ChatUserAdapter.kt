@@ -11,6 +11,7 @@ import com.entity.unity.ChatActivity
 import com.entity.unity.ChattingActivity
 import com.entity.unity.R
 import com.entity.unity.model.User
+import com.google.firebase.auth.FirebaseAuth
 
 class ChatUserAdapter(val context: Context,val userList:ArrayList<User>):RecyclerView.Adapter<ChatUserAdapter.ChatUserViewHolder>() {
 

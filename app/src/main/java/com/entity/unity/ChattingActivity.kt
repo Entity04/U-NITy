@@ -1,6 +1,7 @@
 package com.entity.unity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
@@ -49,9 +50,10 @@ class ChattingActivity : AppCompatActivity() {
 
         chatRecyclerView.layoutManager= LinearLayoutManager(this)
         chatRecyclerView.adapter=messageAdapter
+
             mDbRef.child("chats").child(senderRoom!!).child("messages")
                 .addValueEventListener(object : ValueEventListener {
-                    @SuppressLint("NotifyDataSetChanged")
+                    //@SuppressLint("NotifyDataSetChanged")
                     override fun onDataChange(snapshot: DataSnapshot) {
                         messageList.clear()
                         for (postSnapshot in snapshot.children) {
@@ -64,6 +66,7 @@ class ChattingActivity : AppCompatActivity() {
                     }
 
                 })
+
         sentButton.setOnClickListener {
             val message = messageBox.text.toString()
             val messageObject = MessageData(message, senderUid)
@@ -73,6 +76,12 @@ class ChattingActivity : AppCompatActivity() {
                         .setValue(messageObject)
                 }
             messageBox.setText("")
+        }
+
+        val back:ImageView=findViewById(R.id.back)
+        back.setOnClickListener {
+            startActivity(Intent(this,ChatActivity::class.java))
+            finish()
         }
     }
 }
