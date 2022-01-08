@@ -64,7 +64,7 @@ class HealthFragment : Fragment() {
             for(d in list)
             {
                 val id:String=d.id.toString()
-                val gsReference = storage.getReferenceFromUrl("gs://unity-3e75e.appspot.com/images/$id")
+                val gsReference = storage.getReference("images/$id")
                 val post: Post=Post(d.get("description").toString(),d.get("likes").toString(),gsReference)
                 postsList.add(post)
             }
