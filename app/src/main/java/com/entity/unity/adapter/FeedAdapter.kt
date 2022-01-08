@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.R
 import com.entity.unity.model.Post
 
-class FeedAdapter {
-    class PostAdapter(private val posts : ArrayList<Post>, private val context : Context) : RecyclerView.Adapter<PostAdapter.PostViewHolder>()  {
+
+    class FeedAdapter(private val posts : ArrayList<Post>, private val context : Context) : RecyclerView.Adapter<FeedAdapter.PostViewHolder>()  {
         inner class PostViewHolder(view : View) : RecyclerView.ViewHolder(view){
             val description = view.findViewById<TextView>(R.id.postDescription)
             val postimage=view.findViewById<TextView>(R.id.dp)
@@ -30,4 +30,3 @@ class FeedAdapter {
             return posts.size
         }
     }
-}
