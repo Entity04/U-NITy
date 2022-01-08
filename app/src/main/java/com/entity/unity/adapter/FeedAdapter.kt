@@ -10,19 +10,19 @@ import com.entity.unity.R
 import com.entity.unity.model.Post
 
 
-    class FeedAdapter(private val posts : ArrayList<Post>, private val context : Context) : RecyclerView.Adapter<FeedAdapter.PostViewHolder>()  {
-        inner class PostViewHolder(view : View) : RecyclerView.ViewHolder(view){
+    class FeedAdapter(private val posts : ArrayList<Post>, private val context : Context) : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>()  {
+        inner class FeedViewHolder(view : View) : RecyclerView.ViewHolder(view){
             val description = view.findViewById<TextView>(R.id.postDescription)
             val postimage=view.findViewById<TextView>(R.id.dp)
         }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.feed_item , parent , false)   //inflation layout as a view
-            val holder = PostViewHolder(view)                                         //passing the above view into view holder
+            val holder = FeedViewHolder(view)                                         //passing the above view into view holder
             return holder                                                             //returning holder
         }
 
-        override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
+        override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
             val curr_post = posts[position]
             holder.description.text = curr_post.desc
         }
