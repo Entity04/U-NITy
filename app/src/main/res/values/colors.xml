@@ -6,5 +6,8 @@
     <color name="colorSecondary">#a2d9ff</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
+    <color name="blue_grey_700">#37474f</color>
+    <color name="grey_900">#212121</color>
+    <color name="image_background">#E1E1E1</color>
 
 </resources>

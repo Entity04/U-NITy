@@ -12,6 +12,7 @@ import com.entity.unity.adapter.ChatUserAdapter
 import com.entity.unity.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
 
 class ChatActivity : AppCompatActivity() {
 
