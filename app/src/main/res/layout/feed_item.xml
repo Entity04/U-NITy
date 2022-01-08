@@ -58,7 +58,7 @@
             android:orientation="horizontal"
             android:paddingHorizontal="10dp">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.7">
@@ -66,37 +66,19 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/reactions"
+                    android:layout_marginRight="5dp"
                     android:src="@drawable/ic_thums_up" />
 
                 <TextView
                     android:id="@+id/reactions"
                     android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="10"
-                    android:textSize="10sp" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_comment" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Leave a comment"
-                    android:textSize="10sp" />
-
-            </LinearLayout>
+                    android:text="0"
+                    android:textSize="18sp" />
+            </RelativeLayout>
         </LinearLayout>
 
     </LinearLayout>

@@ -49,7 +49,6 @@ class CreateFeed : AppCompatActivity() {
         val db=FirebaseFirestore.getInstance()
         post.setOnClickListener {
             val mp= HashMap<String,String>()
-            mp["name"]=mauth.currentUser!!.displayName.toString()
             mp["description"]=desc.text.toString()
             db.collection("Feed").document(postid).set(mp)
                 .addOnSuccessListener {
