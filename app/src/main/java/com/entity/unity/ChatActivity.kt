@@ -36,7 +36,7 @@ class ChatActivity : AppCompatActivity() {
         chatUserRecyclerView.layoutManager=LinearLayoutManager(this)
         chatUserRecyclerView.adapter=adapter
 
-        mDbRef.child("User").addValueEventListener(object : ValueEventListener {
+        mDbRef.child("chats").addValueEventListener(object : ValueEventListener {
             @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -45,7 +45,7 @@ class ChatActivity : AppCompatActivity() {
                     val currentUser= postSnapshot.getValue(User::class.java)
                     if (mAuth.currentUser?.uid!= currentUser?.uid){
                         userList.add(currentUser!!)
-                        Log.i("Data",currentUser.email.toString())
+                        //Log.i("Data",currentUser.email.toString())
                     }
                 }
                 adapter.notifyDataSetChanged()
