@@ -3,6 +3,7 @@ package com.entity.unity
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +17,7 @@ class ChattingActivity : AppCompatActivity() {
     private lateinit var messageBox: EditText
     private lateinit var sendButton: ImageView
     private lateinit var messageAdapter: MessageAdapter
-    private lateinit var messageList: ArrayList<Message>
+    private lateinit var messageList: ArrayList<com.entity.unity.model.Message>
     private lateinit var mDbRef: DatabaseReference
 
     var recieverRoom: String?=null
