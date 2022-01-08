@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +13,9 @@ import com.entity.unity.CreateFeed
 import com.entity.unity.adapter.FeedAdapter
 import com.entity.unity.databinding.FragmentHealthBinding
 import com.entity.unity.model.Post
-import com.google.firebase.firestore.auth.User
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 
 class HealthFragment : Fragment() {
 
@@ -50,8 +50,20 @@ class HealthFragment : Fragment() {
         feedRecyclerView=binding.feedRecyclerview
         feedRecyclerView.layoutManager= LinearLayoutManager(requireContext())
         feedRecyclerView.adapter=adapter
+        val db= FirebaseFirestore.getInstance()
 
-
+        val storage = FirebaseStorage.getInstance()
+        db.collection("Feed").get().addOnSuccessListener{
+            val list: MutableList<DocumentSnapshot> = it.documents
+            for(d in list)
+            {
+                val id:String=d.id.toString()
+                val gsReference = storage.getReferenceFromUrl("gs://bucket/images/$id")
+                val post: Post=Post(d.get("description").toString(),d.get("likes").toString(),gsReference.toString())
+                postsList.add(post)
+            }
+            adapter.notifyDataSetChanged()
+        }
         return root
     }
 

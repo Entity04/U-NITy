@@ -52,6 +52,7 @@ class CreateFeed : AppCompatActivity() {
         post.setOnClickListener {
             val mp= HashMap<String,String>()
             mp["description"]=desc.text.toString()
+            mp["likes"]= 0.toString()
             db.collection("Feed").document(postid).set(mp)
                 .addOnSuccessListener {
                 uploadImage()
