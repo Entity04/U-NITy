@@ -60,6 +60,7 @@ class ChattingActivity : AppCompatActivity() {
                             val message = postSnapshot.getValue(MessageData::class.java)
                             messageList.add(message!!)
                         }
+                        chatRecyclerView.smoothScrollToPosition(messageAdapter.itemCount)
                         messageAdapter.notifyDataSetChanged()
                     }
                     override fun onCancelled(error: DatabaseError) {
