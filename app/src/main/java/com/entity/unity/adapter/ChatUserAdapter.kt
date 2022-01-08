@@ -27,7 +27,6 @@ class ChatUserAdapter(val context: Context,val userList:ArrayList<User>):Recycle
         val currentUser=userList[position]
         holder.tvName.text=currentUser.name
         holder.itemView.setOnClickListener{
-
             val intent= Intent(context, ChattingActivity::class.java)
             intent.putExtra("name",currentUser.name)
             intent.putExtra("uid",currentUser.uid)

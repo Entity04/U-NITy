@@ -56,8 +56,7 @@ class ChattingActivity : AppCompatActivity() {
             val messageObject=Message()
         }
 
-
-        mDbRef.child("chats").child(senderRoom!!).child("messages")
+        mDbRef.child("Chats").child(senderRoom!!).child("messages")
             .addValueEventListener(object : ValueEventListener {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onDataChange(snapshot: DataSnapshot) {

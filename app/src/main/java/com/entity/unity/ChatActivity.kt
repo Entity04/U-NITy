@@ -36,7 +36,7 @@ class ChatActivity : AppCompatActivity() {
         chatUserRecyclerView.layoutManager=LinearLayoutManager(this)
         chatUserRecyclerView.adapter=adapter
 
-        mDbRef.child("user").addValueEventListener(object : ValueEventListener {
+        mDbRef.child("User").addValueEventListener(object : ValueEventListener {
             @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -47,7 +47,6 @@ class ChatActivity : AppCompatActivity() {
                         userList.add(currentUser!!)
                         Log.i("Data",currentUser.email.toString())
                     }
-
                 }
                 adapter.notifyDataSetChanged()
                 pbChat.visibility= View.GONE
