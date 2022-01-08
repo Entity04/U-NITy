@@ -16,7 +16,7 @@ class ChattingActivity : AppCompatActivity() {
 
     private lateinit var chatRecyclerView: RecyclerView
     private lateinit var messageBox: EditText
-    private lateinit var sendButton: ImageView
+    private lateinit var sentButton: ImageView
     private lateinit var messageAdapter: MessageAdapter
     private lateinit var messageList: ArrayList<MessageData>
     private lateinit var mDbRef: DatabaseReference
@@ -44,42 +44,40 @@ class ChattingActivity : AppCompatActivity() {
 
         chatRecyclerView=findViewById(R.id.chatRecyclerView)
         messageBox=findViewById(R.id.messageBox)
-        sendButton=findViewById(R.id.sentButton)
+        sentButton=findViewById(R.id.sentButton)
         messageList= ArrayList()
         messageAdapter= MessageAdapter(this,messageList)
 
         chatRecyclerView.layoutManager= LinearLayoutManager(this)
         chatRecyclerView.adapter=messageAdapter
 
-        sendButton.setOnClickListener{
-            val message=messageBox.text.toString()
-            val messageObject=Message()
-        }
 
-        mDbRef.child("Chats").child(senderRoom!!).child("messages")
-            .addValueEventListener(object : ValueEventListener {
-                @SuppressLint("NotifyDataSetChanged")
-                override fun onDataChange(snapshot: DataSnapshot) {
 
-                    messageList.clear()
 
-                    for (postSnapshot in snapshot.children){
-                        val message=postSnapshot.getValue(MessageData::class.java)
-                        messageList.add(message!!)
+            mDbRef.child("chats").child(senderRoom!!).child("messages")
+                .addValueEventListener(object : ValueEventListener {
+                    @SuppressLint("NotifyDataSetChanged")
+                    override fun onDataChange(snapshot: DataSnapshot) {
+
+                        messageList.clear()
+
+                        for (postSnapshot in snapshot.children) {
+                            val message = postSnapshot.getValue(MessageData::class.java)
+                            messageList.add(message!!)
+
+                        }
+                        messageAdapter.notifyDataSetChanged()
 
                     }
-                    messageAdapter.notifyDataSetChanged()
 
-                }
+                    override fun onCancelled(error: DatabaseError) {
+                    }
 
-                override fun onCancelled(error: DatabaseError) {
-                }
-
-            })
+                })
 
 
 
-        sendButton.setOnClickListener {
+        sentButton.setOnClickListener {
             val message = messageBox.text.toString()
             val messageObject = MessageData(message, senderUid)
 
