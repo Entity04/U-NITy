@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.entity.unity.adapter.ChatUserAdapter
+import com.entity.unity.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 

@@ -1,4 +1,4 @@
-package com.entity.unity
+package com.entity.unity.model
 
 data class User(
     var name:String ?= "Anonymous",
