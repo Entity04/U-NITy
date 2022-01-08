@@ -3,17 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_add_a_photo.xml" value="0.290625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_blue_thumb_up.xml" value="0.290625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_thums_up.xml" value="0.290625" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_vector_edit.xml" value="0.290625" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_vector_gallery.xml" value="0.290625" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_vector_photo_camera.xml" value="0.290625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chat.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatting.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_create_feed.xml" value="0.19610507246376813" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/dialog_custom_image_selection.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/feed_item.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_health.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/btn_bg.xml" value="0.1" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/button_bg.xml" value="0.22037037037037038" />
@@ -30,6 +24,7 @@
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/counselloritem.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/dialog_custom_image_selection.xml" value="0.4" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/feed_item.xml" value="0.4" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_exercise.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_health.xml" value="0.41702867072111205" />
