@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <LinearLayout
-        android:id="@+id/ll1"
+        android:id="@+id/postLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
@@ -48,7 +49,7 @@
         android:gravity="top"
         android:maxLines="10"
         android:hint="@string/what_do_you_want_to_post"
-        app:layout_constraintTop_toBottomOf="@id/ll1" />
+        app:layout_constraintTop_toBottomOf="@id/postLL" />
 
     <EditText
         android:id="@+id/feedDescription"

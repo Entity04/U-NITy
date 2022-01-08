@@ -29,4 +29,5 @@
     <string name="nav_feedback">Feedback</string>
     <string name="topic_feedback">Topic i.e Suggestion, Error, etc.</string>
     <string name="nav_counselor">Counselor</string>
+    <string name="anonymous">Anonymous</string>
 </resources>

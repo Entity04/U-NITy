@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNITy">
         <activity
+            android:name=".ChattingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".FeedbackActivity"
             android:exported="false" />
         <activity

@@ -10,8 +10,15 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
 
 class RegisterActivity : AppCompatActivity() {
+
+    private lateinit var mDbRef:DatabaseReference
+
+    companion object{
+        const val NAME="Anonymous"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -50,6 +57,7 @@ class RegisterActivity : AppCompatActivity() {
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener({ task ->
                             if (task.isSuccessful) {
+                                addUserToDatabase(NAME,email,FirebaseAuth.getInstance().currentUser?.uid!!)
                                 val firebaseUser: FirebaseUser = task.result!!.user!!
 
                                 Toast.makeText(
@@ -82,5 +90,10 @@ class RegisterActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun addUserToDatabase(name: String, email: String, uid: String?) {
+        mDbRef = FirebaseDatabase.getInstance().getReference()
+        mDbRef.child("chats").child(uid!!).setValue(User(name,email,uid))
     }
 }
