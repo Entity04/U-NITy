@@ -95,6 +95,6 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun addUserToDatabase(name: String, email: String, uid: String?) {
         mDbRef = FirebaseDatabase.getInstance().getReference()
-        mDbRef.child("chats").child(uid!!).setValue(User(name,email,uid))
+        mDbRef.child("user").child(uid!!).setValue(User(name,email,uid))
     }
 }

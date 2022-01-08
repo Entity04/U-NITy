@@ -31,7 +31,6 @@ class ChattingActivity : AppCompatActivity() {
         val name= intent.getStringExtra("name")
         val recieverUid= intent.getStringExtra("uid")
 
-
         val senderUid= FirebaseAuth.getInstance().currentUser?.uid
         mDbRef= FirebaseDatabase.getInstance().getReference()
 
@@ -40,53 +39,39 @@ class ChattingActivity : AppCompatActivity() {
 
         supportActionBar?.title= name
 
-
-
         chatRecyclerView=findViewById(R.id.chatRecyclerView)
+
         messageBox=findViewById(R.id.messageBox)
+
         sentButton=findViewById(R.id.sentButton)
         messageList= ArrayList()
         messageAdapter= MessageAdapter(this,messageList)
 
         chatRecyclerView.layoutManager= LinearLayoutManager(this)
         chatRecyclerView.adapter=messageAdapter
-
-
-
-
             mDbRef.child("chats").child(senderRoom!!).child("messages")
                 .addValueEventListener(object : ValueEventListener {
                     @SuppressLint("NotifyDataSetChanged")
                     override fun onDataChange(snapshot: DataSnapshot) {
-
                         messageList.clear()
-
                         for (postSnapshot in snapshot.children) {
                             val message = postSnapshot.getValue(MessageData::class.java)
                             messageList.add(message!!)
-
                         }
                         messageAdapter.notifyDataSetChanged()
-
                     }
-
                     override fun onCancelled(error: DatabaseError) {
                     }
 
                 })
-
-
-
         sentButton.setOnClickListener {
             val message = messageBox.text.toString()
             val messageObject = MessageData(message, senderUid)
-
             mDbRef.child("chats").child(senderRoom!!).child("messages").push()
                 .setValue(messageObject).addOnSuccessListener {
                     mDbRef.child("chats").child(recieverRoom!!).child("messages").push()
                         .setValue(messageObject)
                 }
-
             messageBox.setText("")
         }
     }
