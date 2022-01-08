@@ -52,7 +52,7 @@ class HealthFragment : Fragment() {
         }
 
         postsList=ArrayList()
-        adapter= FeedAdapter(postsList,this@HealthFragment)
+        adapter= FeedAdapter(postsList,requireContext())
         feedRecyclerView=binding.feedRecyclerview
         feedRecyclerView.layoutManager= LinearLayoutManager(requireActivity())
         feedRecyclerView.adapter=adapter
