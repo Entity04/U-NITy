@@ -51,7 +51,7 @@ class CreateFeed : AppCompatActivity() {
             val mp= HashMap<String,String>()
             mp["name"]=mauth.currentUser!!.displayName.toString()
             mp["description"]=desc.text.toString()
-            db.collection("Feed")..add(mp)
+            db.collection("Feed").document(postid).set(mp)
                 .addOnSuccessListener {
                 uploadImage()
                 val intent=Intent(this,MainActivity2::class.java)
