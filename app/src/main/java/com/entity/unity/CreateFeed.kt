@@ -31,6 +31,8 @@ import com.google.firebase.storage.OnProgressListener
 import java.util.*
 
 
+
+
 class CreateFeed : AppCompatActivity() {
     private var filePath: Uri? = null
     private val PICK_IMAGE_REQUEST = 71
@@ -41,8 +43,8 @@ class CreateFeed : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_feed)
         val mauth=FirebaseAuth.getInstance()
-        storage = FirebaseStorage.getInstance();
-        storageReference = storage!!.reference;
+        storage = FirebaseStorage.getInstance()
+        storageReference = storage!!.reference
         val desc: EditText=findViewById(R.id.feedDescription)
         val postImage :ImageView=findViewById(R.id.postImage)
         val post: TextView=findViewById(R.id.post)
