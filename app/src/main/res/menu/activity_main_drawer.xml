@@ -7,6 +7,13 @@
             android:icon="@drawable/ic_nav_user"
             android:title="@string/nav_profile"
             />
+
+        <item
+            android:id="@+id/nav_counselor"
+            android:icon="@drawable/ic_nav_user"
+            android:title="@string/nav_counselor"
+            />
+
         <item
             android:id="@+id/nav_sign_out"
             android:icon="@drawable/ic_nav_sign_out"

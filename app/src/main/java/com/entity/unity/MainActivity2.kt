@@ -58,6 +58,10 @@ class MainActivity2 : AppCompatActivity() {
                     startActivity(Intent(this, EmailPassLogin::class.java))
                     finish()
                 }
+                R.id.nav_counselor -> {
+                    startActivity(Intent(this,ChatActivity::class.java))
+                }
+
             }
             true
         }
