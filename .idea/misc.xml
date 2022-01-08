@@ -3,18 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_create_feed.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/btn_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/button_bg.xml" value="0.22037037037037038" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/button_bg_2.xml" value="0.22037037037037038" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/chat_bg.xml" value="0.22037037037037038" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_arrow_back.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chat.xml" value="0.44982698961937717" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatting.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_create_feed.xml" value="0.4" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_email_pass_login.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_main2.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_splash.xml" value="0.25" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/feed_item.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/counselloritem.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/feed_item.xml" value="0.4" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_exercise.xml" value="0.25" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_health.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_health.xml" value="0.41702867072111205" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/receive.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/reciver_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/sent_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/user_layout.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
       </map>

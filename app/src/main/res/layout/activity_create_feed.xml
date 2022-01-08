@@ -3,8 +3,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CreateFeed">
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/postLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_light"
+            android:text="@string/add_a_post"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/post"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:text="@string/post"
+            android:backgroundTint="@color/colorPrimary"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/feedTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="15dp"
+        android:background="@null"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="top"
+        android:maxLines="10"
+        android:hint="@string/what_do_you_want_to_post"
+        app:layout_constraintTop_toBottomOf="@id/postLL" />
+
+    <EditText
+        android:id="@+id/feedDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="15dp"
+        android:background="@null"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="top"
+        android:maxLines="10"
+        android:hint="@string/post_description"
+        app:layout_constraintTop_toBottomOf="@id/feedTitle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
