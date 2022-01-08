@@ -18,7 +18,7 @@ class ChattingActivity : AppCompatActivity() {
     private lateinit var messageBox: EditText
     private lateinit var sendButton: ImageView
     private lateinit var messageAdapter: MessageAdapter
-    private lateinit var messageList: ArrayList<com.entity.unity.model.MessageData>
+    private lateinit var messageList: ArrayList<MessageData>
     private lateinit var mDbRef: DatabaseReference
 
     var recieverRoom: String?=null
