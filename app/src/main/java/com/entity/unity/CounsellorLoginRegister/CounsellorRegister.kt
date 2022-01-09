@@ -8,10 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.entity.unity.CounsellorHome
-import com.entity.unity.EmailPassLogin
-import com.entity.unity.MainActivity2
-import com.entity.unity.R
+import com.entity.unity.*
 import com.entity.unity.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -29,7 +26,7 @@ class CounsellorRegister : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_counsellor_register)
 
-        val secretCode: String="NitjCounsellor"
+        val secretCode: String="UNITE"
 
         val etCode: EditText=findViewById(R.id.etRegisterCode)
         val btnRegister: Button = findViewById(R.id.btnRegister)
@@ -81,7 +78,7 @@ class CounsellorRegister : AppCompatActivity() {
                                     FirebaseAuth.getInstance().currentUser?.uid!!
                                 )
                                 val firebaseUser: FirebaseUser = task.result!!.user!!
-
+                                Constants.hashmap[FirebaseAuth.getInstance().currentUser?.uid!!]=true
                                 Toast.makeText(
                                     this,
                                     "You are registered successfully",
