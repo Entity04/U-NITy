@@ -17,7 +17,7 @@ class CounsellorHome : AppCompatActivity() {
 
     private lateinit var chatUserRecyclerView: RecyclerView
     private lateinit var userList:ArrayList<Student>
-    private lateinit var adapter: ChatUserAdapter
+    private lateinit var adapter: CounsellorChatAdapter
     private lateinit var mAuth:FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
     private lateinit var pbChat: ProgressBar
@@ -37,7 +37,9 @@ class CounsellorHome : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 userList.clear()
                 for(postSnapshot in snapshot.children){
-
+                    val currentUser= postSnapshot.getValue(Student::class.java)
+                    if(mAuth.currentUser!!.uid.toString() == currentUser!!.counselloruid.toString())
+                        userList.add(currentUser)
                 }
                 adapter.notifyDataSetChanged()
                 pbChat.visibility= View.GONE
