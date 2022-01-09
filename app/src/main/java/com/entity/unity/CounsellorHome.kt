@@ -6,16 +6,14 @@ import android.view.View
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.entity.unity.adapter.ChatUserAdapter
 import com.entity.unity.adapter.CounsellorChatAdapter
 import com.entity.unity.model.Student
-import com.entity.unity.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class CounsellorHome : AppCompatActivity() {
 
-    private lateinit var chatUserRecyclerView: RecyclerView
+    private lateinit var counsellorChatRecyclerView: RecyclerView
     private lateinit var userList:ArrayList<Student>
     private lateinit var adapter: CounsellorChatAdapter
     private lateinit var mAuth:FirebaseAuth
@@ -29,9 +27,9 @@ class CounsellorHome : AppCompatActivity() {
         mDbRef = FirebaseDatabase.getInstance().getReference()
         userList=ArrayList()
         adapter= CounsellorChatAdapter(this,userList)
-        chatUserRecyclerView=findViewById(R.id.rvChat)
-        chatUserRecyclerView.layoutManager= LinearLayoutManager(this)
-        chatUserRecyclerView.adapter=adapter
+        counsellorChatRecyclerView=findViewById(R.id.rvChat)
+        counsellorChatRecyclerView.layoutManager= LinearLayoutManager(this)
+        counsellorChatRecyclerView.adapter=adapter
         mDbRef.child("student").addValueEventListener(object : ValueEventListener {
             //@SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {

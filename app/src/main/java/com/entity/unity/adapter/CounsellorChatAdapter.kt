@@ -16,12 +16,12 @@ class CounsellorChatAdapter(val context: Context, val userList:ArrayList<Student
         val tvName : TextView = itemView.findViewById(R.id.tvChatUsername)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CounsellorChatAdapter.CounsellorChatViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CounsellorChatViewHolder {
         val view: View =
             LayoutInflater.from(parent.context).inflate(R.layout.user_layout,parent,false)
         return CounsellorChatViewHolder(view)
     }
-    override fun onBindViewHolder(holder: CounsellorChatAdapter.CounsellorChatViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CounsellorChatViewHolder, position: Int) {
         val currentUser=userList[position]
         holder.tvName.text=currentUser.email
         holder.itemView.setOnClickListener{
