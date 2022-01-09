@@ -35,7 +35,6 @@ class SplashActivity : AppCompatActivity() {
                                     isCounsellor=1
                                     val intent=Intent(this@SplashActivity,CounsellorHome::class.java)
                                     startActivity(intent)
-
                                     break
                                 }
                             }

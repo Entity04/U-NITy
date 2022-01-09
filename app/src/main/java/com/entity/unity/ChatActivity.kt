@@ -44,7 +44,7 @@ class ChatActivity : AppCompatActivity() {
                 userList.clear()
                 for(postSnapshot in snapshot.children){
                     val currentUser= postSnapshot.getValue(User::class.java)
-                    if (mAuth.currentUser?.uid != currentUser?.uid && currentUser!!.isCounsellor==true){
+                    if (mAuth.currentUser?.uid != currentUser?.uid ){
                         userList.add(currentUser!!)
                         //Log.i("Data",currentUser.email.toString())
                     }

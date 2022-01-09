@@ -10,6 +10,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.model.MessageData
+import com.entity.unity.model.Student
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -72,9 +73,13 @@ class ChattingActivity : AppCompatActivity() {
             val message = messageBox.text.toString()
             val messageObject = MessageData(message, senderUid)
             mDbRef.child("chats").child(senderRoom!!).child("messages").push()
-                .setValue(messageObject).addOnSuccessListener {
+                .setValue(messageObject).addOnSuccessListener{
                     mDbRef.child("chats").child(recieverRoom!!).child("messages").push()
                         .setValue(messageObject)
+                    val currentuser=FirebaseAuth.getInstance().currentUser
+                    val email:String=currentuser!!.email.toString()
+                    mDbRef.child("student").push()
+                        .setValue(Student(email,recieverUid.toString(),senderUid.toString()))
                 }
             messageBox.setText("")
         }

@@ -23,7 +23,6 @@ class ChatUserAdapter(val context: Context,val userList:ArrayList<User>):Recycle
         val view:View=LayoutInflater.from(parent.context).inflate(R.layout.user_layout,parent,false)
         return ChatUserViewHolder(view)
     }
-
     override fun onBindViewHolder(holder: ChatUserViewHolder, position: Int) {
         val currentUser=userList[position]
         holder.tvName.text=currentUser.name
@@ -34,7 +33,6 @@ class ChatUserAdapter(val context: Context,val userList:ArrayList<User>):Recycle
             context.startActivity(intent)
         }
     }
-
     override fun getItemCount(): Int {
         return userList.size
     }
