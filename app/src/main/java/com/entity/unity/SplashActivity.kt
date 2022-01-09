@@ -23,7 +23,9 @@ class SplashActivity : AppCompatActivity() {
                 if(currentUser!=null){
                     currentUserId=currentUser!!.uid
                 }
-                if(currentUserId.isNotEmpty()){
+                if(currentUserId.isNotEmpty())
+                {
+                    var isCounsellor: Int=0
                     mDbRef.child("user").addValueEventListener(object : ValueEventListener {
                         //@SuppressLint("NotifyDataSetChanged")
                         override fun onDataChange(snapshot: DataSnapshot) {
@@ -32,14 +34,15 @@ class SplashActivity : AppCompatActivity() {
                                 if(currentUserId == current?.uid){
                                     val intent=Intent(this@SplashActivity,CounsellorHome::class.java)
                                     startActivity(intent)
+                                    finish()
+                                    break
                                 }
                             }
-                            startActivity(Intent(this@SplashActivity,MainActivity2::class.java))
                         }
                         override fun onCancelled(error: DatabaseError) {
                         }
                     })
-
+                    startActivity(Intent(this@SplashActivity,MainActivity2::class.java))
                 }
                 else{
                     startActivity(Intent(this,ChosserActivity::class.java))
