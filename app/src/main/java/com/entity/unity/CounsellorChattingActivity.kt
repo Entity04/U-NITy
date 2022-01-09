@@ -77,7 +77,7 @@ class CounsellorChattingActivity : AppCompatActivity() {
 
         val back: ImageView = findViewById(R.id.back)
         back.setOnClickListener {
-            startActivity(Intent(this, CounsellorChattingActivity::class.java))
+            startActivity(Intent(this, CounsellorHome::class.java))
             finish()
         }
     }

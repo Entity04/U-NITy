@@ -27,7 +27,7 @@ class CounsellorChatAdapter(val context: Context, val userList:ArrayList<Student
         holder.itemView.setOnClickListener{
             val intent= Intent(context, ChattingActivity::class.java)
             intent.putExtra("name",currentUser.email)
-            intent.putExtra("uid",currentUser.counselloruid)
+            intent.putExtra("uid",currentUser.studentuid)
             context.startActivity(intent)
         }
     }
