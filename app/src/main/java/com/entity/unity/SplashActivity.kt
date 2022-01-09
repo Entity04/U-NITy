@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        /*mDbRef=FirebaseDatabase.getInstance().getReference()
+        mDbRef=FirebaseDatabase.getInstance().getReference()
 
         Thread {
 
@@ -32,9 +32,10 @@ class SplashActivity : AppCompatActivity() {
                             for(postSnapshot in snapshot.children){
                                 val current= postSnapshot.getValue(User::class.java)
                                 if(currentUserId == current?.uid){
+                                    isCounsellor=1
                                     val intent=Intent(this@SplashActivity,CounsellorHome::class.java)
                                     startActivity(intent)
-                                    finish()
+
                                     break
                                 }
                             }
@@ -42,32 +43,14 @@ class SplashActivity : AppCompatActivity() {
                         override fun onCancelled(error: DatabaseError) {
                         }
                     })
-                    startActivity(Intent(this@SplashActivity,MainActivity2::class.java))
+                    if(isCounsellor==0) {
+                        startActivity(Intent(this@SplashActivity, MainActivity2::class.java))
+                    }
                 }
                 else{
                     startActivity(Intent(this,ChosserActivity::class.java))
                 }
                 finish()
-        }.start()*/
-        Thread {
-            val currentUser= FirebaseAuth.getInstance().currentUser
-            var currentUserId= ""
-            if(currentUser!=null){
-                currentUserId=currentUser.uid
-            }
-            if(currentUserId.isNotEmpty()){
-                if(Constants.hashmap[currentUserId]==true){
-                    startActivity(Intent(this,CounsellorHome::class.java))
-                }
-                else {
-                    startActivity(Intent(this, MainActivity2::class.java))
-                }
-            }
-            else{
-                startActivity(Intent(this,ChosserActivity::class.java))
-            }
-
-            finish()
         }.start()
     }
 }
