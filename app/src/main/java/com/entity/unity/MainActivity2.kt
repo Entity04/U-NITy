@@ -55,7 +55,7 @@ class MainActivity2 : AppCompatActivity() {
             when (it.itemId) {
                 R.id.nav_sign_out -> {
                     FirebaseAuth.getInstance().signOut()
-                    startActivity(Intent(this, EmailPassLogin::class.java))
+                    startActivity(Intent(this, ChosserActivity::class.java))
                     finish()
                 }
                 R.id.nav_counselor -> {

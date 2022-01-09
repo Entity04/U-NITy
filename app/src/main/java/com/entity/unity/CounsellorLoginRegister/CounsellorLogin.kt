@@ -17,7 +17,7 @@ class CounsellorLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_counsellor_login)
 
-        val secretCode: String="NitjCounsellor"
+        val secretCode: String="UNITE"
 
         val tvRegister: TextView = findViewById(R.id.tvRegister)
         val btnLogin: Button = findViewById(R.id.btnLogin)
@@ -64,7 +64,7 @@ class CounsellorLogin : AppCompatActivity() {
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 val firebaseUser: FirebaseUser = task.result!!.user!!
-
+                                Constants.hashmap[FirebaseAuth.getInstance().currentUser?.uid!!]=true
                                 Toast.makeText(
                                     this,
                                     "You have logged in successfully",

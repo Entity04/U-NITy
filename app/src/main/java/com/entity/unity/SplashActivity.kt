@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        mDbRef=FirebaseDatabase.getInstance().getReference()
+        /*mDbRef=FirebaseDatabase.getInstance().getReference()
 
         Thread {
 
@@ -48,6 +48,26 @@ class SplashActivity : AppCompatActivity() {
                     startActivity(Intent(this,ChosserActivity::class.java))
                 }
                 finish()
+        }.start()*/
+        Thread {
+            val currentUser= FirebaseAuth.getInstance().currentUser
+            var currentUserId= ""
+            if(currentUser!=null){
+                currentUserId=currentUser.uid
+            }
+            if(currentUserId.isNotEmpty()){
+                if(Constants.hashmap[currentUserId]==true){
+                    startActivity(Intent(this,CounsellorHome::class.java))
+                }
+                else {
+                    startActivity(Intent(this, MainActivity2::class.java))
+                }
+            }
+            else{
+                startActivity(Intent(this,ChosserActivity::class.java))
+            }
+
+            finish()
         }.start()
     }
 }
