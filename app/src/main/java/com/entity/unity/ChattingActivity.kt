@@ -68,7 +68,22 @@ class ChattingActivity : AppCompatActivity() {
                     }
 
                 })
+        var isAdded: Boolean=false
+        mDbRef.child("student")
+            .addValueEventListener(object : ValueEventListener {
+                //@SuppressLint("NotifyDataSetChanged")
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    for (postSnapshot in snapshot.children) {
+                        val student = postSnapshot.getValue(Student::class.java)
+                        val current=FirebaseAuth.getInstance().currentUser
+                        if(current!!.uid == student!!.studentuid.toString())
+                            isAdded=true
+                    }
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
 
+            })
         sentButton.setOnClickListener {
             val message = messageBox.text.toString()
             val messageObject = MessageData(message, senderUid)
@@ -76,10 +91,12 @@ class ChattingActivity : AppCompatActivity() {
                 .setValue(messageObject).addOnSuccessListener{
                     mDbRef.child("chats").child(recieverRoom!!).child("messages").push()
                         .setValue(messageObject)
-                    val currentuser=FirebaseAuth.getInstance().currentUser
-                    val email:String=currentuser!!.email.toString()
-                    mDbRef.child("student").push()
-                        .setValue(Student(email,recieverUid.toString(),senderUid.toString()))
+                    if(!isAdded) {
+                        val currentuser = FirebaseAuth.getInstance().currentUser
+                        val email: String = currentuser!!.email.toString()
+                        mDbRef.child("student").push()
+                            .setValue(Student(email, recieverUid.toString(), senderUid.toString()))
+                    }
                 }
             messageBox.setText("")
         }
