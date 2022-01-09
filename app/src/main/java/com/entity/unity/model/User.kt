@@ -4,6 +4,7 @@ class User {
     var name: String?="Anonymous"
     var email: String?=null
     var uid: String?=null
+    var isCounsellor: Boolean=false
 
     constructor(){}
 

@@ -64,7 +64,7 @@ class CounsellorLogin : AppCompatActivity() {
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 val firebaseUser: FirebaseUser = task.result!!.user!!
-
+                                Constants.hashmap[FirebaseAuth.getInstance().currentUser?.uid!!]=true
                                 Toast.makeText(
                                     this,
                                     "You have logged in successfully",
