@@ -21,6 +21,7 @@ import androidx.compose.ui.platform.LocalContext
 import com.entity.unity.APP_ID
 import com.entity.unity.MainActivity2
 import com.entity.unity.VideoViewmodel
+import com.entity.unity.counsellorChat.CounsellorHome
 import com.example.entityyvc.ui.theme.AgoravcTheme
 import io.agora.agorauikit_android.AgoraSettings
 
@@ -53,7 +54,7 @@ fun VideoScreen(
     BackHandler {
         agoraView?.leaveChannel()
 
-        context.startActivity(Intent(context,MainActivity2::class.java))
+        context.startActivity(Intent(context,CounsellorHome::class.java))
     }
     if(viewmodel._hasadPermi.value && viewmodel._hasCamPermi.value) {
 
