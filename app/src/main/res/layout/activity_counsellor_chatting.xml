@@ -7,7 +7,6 @@
     tools:context=".studentChat.ChattingActivity">
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
         android:layout_width="match_parent"
@@ -43,7 +42,7 @@
             android:paddingLeft="15dp" />
 
         <ImageView
-            android:id="@+id/sentButton"
+            android:id="@+id/counsellorSentButton"
             android:layout_width="57dp"
             android:layout_height="50dp"
             android:layout_weight="20"

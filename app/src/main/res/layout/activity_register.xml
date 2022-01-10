@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".studentRegLogIn.RegisterActivity">
 
     <ImageView
         android:id="@+id/wave1"
@@ -38,6 +38,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="36dp"
+        android:textColor="@color/colorPrimary"
         android:layout_marginEnd="80dp"
         android:background="@drawable/button_bg"
         android:ems="10"
@@ -59,6 +60,7 @@
         android:background="@drawable/button_bg"
         android:ems="10"
         android:hint="@string/enter_you_password"
+        android:textColor="@color/colorPrimary"
         android:inputType="textPassword"
         android:paddingStart="20dp"
         android:textSize="15sp"

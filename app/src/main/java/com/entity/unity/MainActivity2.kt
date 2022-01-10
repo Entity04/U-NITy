@@ -2,13 +2,11 @@ package com.entity.unity
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Html
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -18,6 +16,7 @@ import androidx.navigation.ui.setupWithNavController
 
 import com.entity.unity.databinding.ActivityMain2Binding
 import com.entity.unity.uibot.Chatbot
+import com.entity.unity.studentChat.ChatActivity
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -57,11 +56,11 @@ class MainActivity2 : AppCompatActivity() {
             when (it.itemId) {
                 R.id.nav_sign_out -> {
                     FirebaseAuth.getInstance().signOut()
-                    startActivity(Intent(this, EmailPassLogin::class.java))
+                    startActivity(Intent(this, ChosserActivity::class.java))
                     finish()
                 }
                 R.id.nav_counselor -> {
-                    startActivity(Intent(this,ChatActivity::class.java))
+                    startActivity(Intent(this, ChatActivity::class.java))
                 }
                 R.id.chatbot->{
 startActivity(Intent(this, Chatbot::class.java))
@@ -82,7 +81,6 @@ startActivity(Intent(this, Chatbot::class.java))
     override fun onBackPressed() {
 
         if (binding.container.isDrawerOpen(GravityCompat.START)) {
-
             binding.container.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()

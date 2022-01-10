@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.entity.unity">
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -16,10 +17,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNITy">
         <activity
-            android:name=".ChattingActivity"
+            android:name=".counsellorChat.CounsellorChattingActivity"
             android:exported="false" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".CounsellorLoginRegister.CounsellorRegister"
+            android:exported="false" />
+        <activity
+            android:name=".CounsellorLoginRegister.CounsellorLogin"
+            android:exported="false" />
+        <activity
+            android:name=".counsellorChat.CounsellorHome"
+            android:exported="false" />
+        <activity
+            android:name=".ChosserActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".studentChat.ChattingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".studentChat.ChatActivity"
             android:exported="false" />
         <activity android:name=".uibot.Chatbot"
             android:exported="false"/>
@@ -34,15 +51,15 @@
             android:exported="true"
             android:label="@string/title_activity_main2" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".studentRegLogIn.ForgotPasswordActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".studentRegLogIn.RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".EmailPassLogin"
+            android:name=".studentRegLogIn.EmailPassLogin"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

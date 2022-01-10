@@ -15,12 +15,14 @@
         <TextView
             android:id="@+id/txt_recieve_message"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
             android:paddingLeft="10dp"
             android:paddingTop="5dp"
-            android:paddingBottom="5dp"
             android:paddingRight="10dp"
-            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
             android:text="This is Receive message"
+            android:textAlignment="viewStart"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
