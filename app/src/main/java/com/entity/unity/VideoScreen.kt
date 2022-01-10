@@ -21,8 +21,13 @@ import androidx.compose.ui.platform.LocalContext
 import com.entity.unity.APP_ID
 import com.entity.unity.MainActivity2
 import com.entity.unity.VideoViewmodel
+import com.entity.unity.adapter.CounsellorChatAdapter
+import com.entity.unity.constants.Constants
+import com.entity.unity.counsellorChat.CounsellorChattingActivity
 import com.entity.unity.counsellorChat.CounsellorHome
+import com.entity.unity.studentChat.ChattingActivity
 import com.example.entityyvc.ui.theme.AgoravcTheme
+import com.google.firebase.auth.FirebaseAuth
 import io.agora.agorauikit_android.AgoraSettings
 
 @ExperimentalUnsignedTypes
@@ -53,8 +58,16 @@ fun VideoScreen(
     }
     BackHandler {
         agoraView?.leaveChannel()
-
-        context.startActivity(Intent(context,CounsellorHome::class.java))
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        var currentUserId = ""
+        if (currentUser != null) {
+            currentUserId = currentUser!!.uid
+        }
+        if(Constants.hashmap[currentUserId]==true) {
+            context.startActivity(Intent(context, CounsellorChattingActivity::class.java))
+        }else{
+            context.startActivity(Intent(context, ChattingActivity::class.java))
+        }
     }
     if(viewmodel._hasadPermi.value && viewmodel._hasCamPermi.value) {
 
