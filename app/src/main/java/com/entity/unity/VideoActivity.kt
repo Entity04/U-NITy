@@ -19,6 +19,7 @@ import androidx.navigation.navArgument
 
 import com.example.entityyvc.ui.theme.AgoravcTheme
 import com.example.entityyvc.ui.theme.RoomScreen
+import io.agora.agorauikit_android.AgoraSettings
 import java.lang.reflect.Modifier
 
 const val APP_ID = "dc9ae93855584b78a0788d17227ee785"
@@ -58,5 +59,16 @@ class VideoActivity : ComponentActivity() {
                 }
             }
         }
+
+    }
+    fun uisettings(): AgoraSettings {
+        val agoras= AgoraSettings()
+        agoras.enabledButtons= mutableSetOf(
+            AgoraSettings.BuiltinButton.CAMERA,
+            AgoraSettings.BuiltinButton.MIC,
+            AgoraSettings.BuiltinButton.END
+        )
+        return agoras
+
     }
 }
