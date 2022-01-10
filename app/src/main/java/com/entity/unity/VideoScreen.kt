@@ -76,8 +76,8 @@ fun VideoScreen(
             factory = {
                 AgoraVideoViewer(
                     it, connectionData = AgoraConnectionData(
-                        appId = APP_ID
-                    )
+                        appId = APP_ID,
+                    ),agoraSettings=VideoActivity().uisettings()
                 ).also {
                     it.join(roomName)
                     agoraView = it

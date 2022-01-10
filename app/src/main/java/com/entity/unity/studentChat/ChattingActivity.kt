@@ -53,7 +53,7 @@ class ChattingActivity : AppCompatActivity() {
 
         messageBox=findViewById(R.id.messageBox)
 
-        sentButton=findViewById(R.id.sentButton)
+        sentButton=findViewById(R.id.btn_send)
         messageList= ArrayList()
         messageAdapter= MessageAdapter(this,messageList)
 
