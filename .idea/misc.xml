@@ -12,9 +12,13 @@
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/receive_round_box.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/round_button.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/send_round_box.xml" value="0.1" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatbot.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatting.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/message_item.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/recieve_layout.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/sent_layout.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/menu/vc.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/btn_bg.xml" value="0.1" />
