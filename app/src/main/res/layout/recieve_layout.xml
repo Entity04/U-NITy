@@ -6,9 +6,10 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:background="@drawable/btn_bg"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
+        android:backgroundTint="@color/green"
+        android:background="@drawable/receive_round_box"
         android:layout_alignParentLeft="true"
         android:layout_height="wrap_content">
 
@@ -23,7 +24,7 @@
             android:paddingBottom="5dp"
             android:text="This is Receive message"
             android:textAlignment="viewStart"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
     </RelativeLayout>

@@ -6,8 +6,9 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:background="@drawable/btn_bg"
-        android:layout_marginLeft="10dp"
+        android:backgroundTint="@color/blue"
+        android:background="@drawable/send_round_box"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
         android:layout_alignParentRight="true"
         android:layout_height="wrap_content">
@@ -23,7 +24,7 @@
             android:paddingBottom="5dp"
             android:text="This is sent message"
             android:textAlignment="textEnd"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp" />
     </RelativeLayout>
 </RelativeLayout>
