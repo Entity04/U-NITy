@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.entity.unity.constants.Constants
 import com.entity.unity.counsellorChat.CounsellorHome
 import com.entity.unity.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -30,7 +29,6 @@ class SplashActivity : AppCompatActivity() {
                         val current = postSnapshot.getValue(User::class.java)
                         if (currentUserId == current?.uid) {
                             isCounsellor=true
-                            Constants.hashmap[currentUserId]=true
                             val intent =
                                 Intent(this@SplashActivity, CounsellorHome::class.java)
                             startActivity(intent)
