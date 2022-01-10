@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/back"
+        android:id="@+id/counsellorBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back"
+        app:layout_constraintTop_toBottomOf="@+id/counsellorBack"
         android:layout_marginTop="5dp" />
 
     <LinearLayout
@@ -54,7 +54,7 @@
             android:paddingLeft="15dp" />
 
         <ImageView
-            android:id="@+id/sentButton"
+            android:id="@+id/counsellorSentButton"
             android:layout_width="57dp"
             android:layout_height="50dp"
             android:layout_weight="20"

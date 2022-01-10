@@ -12,7 +12,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class CounsellorHome : AppCompatActivity() {
-
     private lateinit var counsellorChatRecyclerView: RecyclerView
     private lateinit var userList:ArrayList<Student>
     private lateinit var adapter: CounsellorChatAdapter

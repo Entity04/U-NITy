@@ -39,7 +39,7 @@ class CounsellorChattingActivity : AppCompatActivity() {
 
         messageBox = findViewById(R.id.messageBox)
 
-        sentButton = findViewById(R.id.sentButton)
+        sentButton = findViewById(R.id.counsellorSentButton)
         messageList = ArrayList()
         messageAdapter = CounsellorMessageAdapter(this, messageList)
 
@@ -74,9 +74,9 @@ class CounsellorChattingActivity : AppCompatActivity() {
                 }
             messageBox.setText("")
         }
-
-        val back: ImageView = findViewById(R.id.back)
+        val back: ImageView = findViewById(R.id.counsellorBack)
         back.setOnClickListener {
+            startActivity(Intent(this,CounsellorHome::class.java))
             finish()
         }
     }
