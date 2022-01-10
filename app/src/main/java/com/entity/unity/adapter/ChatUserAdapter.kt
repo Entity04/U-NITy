@@ -25,7 +25,7 @@ class ChatUserAdapter(val context: Context,val userList:ArrayList<User>):Recycle
     }
     override fun onBindViewHolder(holder: ChatUserViewHolder, position: Int) {
         val currentUser=userList[position]
-        holder.tvName.text=currentUser.name
+        holder.tvName.text=currentUser.email
         holder.itemView.setOnClickListener{
             val intent= Intent(context, ChattingActivity::class.java)
             intent.putExtra("name",currentUser.name)
