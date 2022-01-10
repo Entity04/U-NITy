@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.model.MessageData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-
+@ExperimentalUnsignedTypes
 class ChattingActivity : AppCompatActivity() {
 
     private lateinit var chatRecyclerView: RecyclerView
@@ -84,5 +86,20 @@ class ChattingActivity : AppCompatActivity() {
             startActivity(Intent(this,ChatActivity::class.java))
             finish()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.vc,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.vc->{
+                startActivity(Intent(this,VideoActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -15,7 +15,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+
 import com.entity.unity.databinding.ActivityMain2Binding
+import com.entity.unity.uibot.Chatbot
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -60,6 +62,9 @@ class MainActivity2 : AppCompatActivity() {
                 }
                 R.id.nav_counselor -> {
                     startActivity(Intent(this,ChatActivity::class.java))
+                }
+                R.id.chatbot->{
+startActivity(Intent(this, Chatbot::class.java))
                 }
 
             }
