@@ -59,7 +59,6 @@ class CreateFeed : AppCompatActivity() {
 
     companion object {
         private const val CAMERA = 1
-
         private const val GALLERY = 2
     }
 
@@ -96,15 +95,6 @@ class CreateFeed : AppCompatActivity() {
                 Toast.makeText(this, "Error Occured", Toast.LENGTH_SHORT).show()
             }
         }
-        postImage.setOnClickListener {
-            chooseImage()
-        }
-    }
-    private fun chooseImage() {
-        val intent = Intent()
-        intent.type = "image/*"
-        intent.action = Intent.ACTION_GET_CONTENT
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -139,7 +129,6 @@ class CreateFeed : AppCompatActivity() {
                 data?.let {
                     // Here we will get the select image URI.
                     val selectedPhotoUri = data.data
-
                     // Set Selected Image URI to the imageView using Glide
                     Glide.with(this)
                         .load(selectedPhotoUri)
@@ -243,7 +232,6 @@ class CreateFeed : AppCompatActivity() {
         }
 
         binding.tvGallery.setOnClickListener {
-
             Dexter.withContext(this)
                 .withPermission(
                     Manifest.permission.READ_EXTERNAL_STORAGE
@@ -301,5 +289,4 @@ class CreateFeed : AppCompatActivity() {
                 dialog.dismiss()
             }.show()
     }
-
 }

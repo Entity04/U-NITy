@@ -31,6 +31,7 @@ class FeedAdapter(private val posts : ArrayList<Post>, private val context : Con
         override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
             val curr_post = posts[position]
             holder.description.text = curr_post.desc
+
             val localFile = File.createTempFile("images", ".jpeg")
             curr_post.gref!!.getFile(localFile)
                 .addOnSuccessListener {

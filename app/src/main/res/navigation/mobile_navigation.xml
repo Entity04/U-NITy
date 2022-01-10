@@ -8,13 +8,13 @@
     <fragment
         android:id="@+id/navigation_mentalhealth"
         android:name="com.entity.unity.ui.health.HealthFragment"
-        android:label="@string/title_home"
+        android:label="Add Your Daily Experiences"
         tools:layout="@layout/fragment_health" />
 
     <fragment
         android:id="@+id/navigation_exercise"
         android:name="com.entity.unity.ui.exercise.ExerciseFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/exercise"
         tools:layout="@layout/fragment_exercise" />
 
     <fragment
