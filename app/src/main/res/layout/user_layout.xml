@@ -13,8 +13,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/anonymous"
+            android:textColor="@color/text_color"
             android:padding="10dp"
             android:textSize="28sp"
-            android:textStyle="bold"
             android:layout_margin="10dp"/>
 </androidx.cardview.widget.CardView>
