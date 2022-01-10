@@ -7,18 +7,24 @@
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_thums_up.xml" value="0.290625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chat.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatting.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_home.xml" value="0.18342391304347827" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_create_feed.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_health.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/msg_box_bg.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/nav_header_main_background.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/receive_round_box.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/round_button.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/send_round_box.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatbot.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatting.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_main2.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/message_item.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/recieve_layout.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/sent_layout.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/user_layout.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/menu/vc.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/btn_bg.xml" value="0.1" />
@@ -28,11 +34,6 @@
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_arrow_back.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chat.xml" value="0.44982698961937717" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatting.xml" value="0.25" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chosser.xml" value="0.25" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_chatting.xml" value="0.25" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_home.xml" value="0.264" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_login.xml" value="0.25" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_register.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_create_feed.xml" value="0.4" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_email_pass_login.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_login.xml" value="0.25" />
@@ -48,13 +49,11 @@
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/receive.xml" value="0.10555555555555556" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/recieve_layout.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/reciver_layout.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/sent_layout.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/user_layout.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/menu/counsellor_menu.xml" value="0.25" />
       </map>
     </option>
   </component>
