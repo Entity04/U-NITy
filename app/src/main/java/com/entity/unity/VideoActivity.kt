@@ -22,8 +22,8 @@ import androidx.navigation.navArgument
 import com.example.entityyvc.ui.theme.AgoravcTheme
 import com.example.entityyvc.ui.theme.RoomScreen
 
+const val APP_ID = "dc9ae93855584b78a0788d17227ee785"
 
-const val APP_ID="dc9ae93855584b78a0788d17227ee785"
 @ExperimentalUnsignedTypes
 class VideoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,27 +35,27 @@ class VideoActivity : ComponentActivity() {
                     modifier = Modifier.padding(16.dp)
                 ) {
                     val navController = rememberNavController()
-NavHost(navController = navController, startDestination = "room_screen"
-){
-    composable(route = "room_screen") {
-        RoomScreen(onNavigate = navController::navigate)
-    }
-    composable(
-        route = "video_screen/{roomName}",
-        arguments = listOf(
-            navArgument(name = "roomName") {
-                type = NavType.StringType
-            }
-        )
-    ) {
-        val roomName = it.arguments?.getString("roomName") ?: return@composable
-        VideoScreen(
-            roomName = roomName,
-            onNavigateUp = navController::navigateUp
-        )
-    }
-}
-
+                    NavHost(
+                        navController = navController, startDestination = "room_screen"
+                    ) {
+                        composable(route = "room_screen") {
+                            RoomScreen(onNavigate = navController::navigate)
+                        }
+                        composable(
+                            route = "video_screen/{roomName}",
+                            arguments = listOf(
+                                navArgument(name = "roomName") {
+                                    type = NavType.StringType
+                                }
+                            )
+                        ) {
+                            val roomName = it.arguments?.getString("roomName") ?: return@composable
+                            VideoScreen(
+                                roomName = roomName,
+                                onNavigateUp = navController::navigateUp
+                            )
+                        }
+                    }
                 }
             }
         }

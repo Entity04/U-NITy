@@ -39,8 +39,6 @@ fun VideoScreen(
         viewmodel.onPermissionsResult(
             acceptedAudioPermission = it[Manifest.permission.RECORD_AUDIO]==true,
             acceptedCameraPermission = it[Manifest.permission.CAMERA]==true
-
-
         )
     } )
 
