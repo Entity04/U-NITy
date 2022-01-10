@@ -30,8 +30,7 @@
             android:exported="false" />
         <activity
             android:name=".ChosserActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:exported="false"/>
         <activity
             android:name=".studentChat.ChattingActivity"
             android:exported="false" />
@@ -53,21 +52,20 @@
         <activity
             android:name=".studentRegLogIn.ForgotPasswordActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.UNITy" />
         <activity
             android:name=".studentRegLogIn.RegisterActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.UNITy" />
         <activity
             android:name=".studentRegLogIn.EmailPassLogin"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.UNITy" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -79,5 +77,4 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>
