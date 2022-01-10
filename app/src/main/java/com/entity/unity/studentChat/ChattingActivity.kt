@@ -1,16 +1,15 @@
-package com.entity.unity
+package com.entity.unity.studentChat
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.entity.unity.MessageAdapter
+import com.entity.unity.R
 import com.entity.unity.model.MessageData
 import com.entity.unity.model.Student
 import com.google.firebase.auth.FirebaseAuth
@@ -35,7 +34,7 @@ class ChattingActivity : AppCompatActivity() {
         val actionBar: ActionBar? = supportActionBar
         actionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        val name= intent.getStringExtra("name")
+        val email= intent.getStringExtra("email")
         val recieverUid= intent.getStringExtra("uid")
 
         val senderUid= FirebaseAuth.getInstance().currentUser?.uid
@@ -44,7 +43,7 @@ class ChattingActivity : AppCompatActivity() {
         senderRoom= recieverUid+senderUid
         recieverRoom=senderUid+recieverUid
 
-        supportActionBar?.title= name
+        supportActionBar?.title= email
 
         chatRecyclerView=findViewById(R.id.chatRecyclerView)
 

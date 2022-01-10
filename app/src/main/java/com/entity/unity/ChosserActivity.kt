@@ -4,10 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import com.entity.unity.CounsellorLoginRegister.CounsellorLogin
+import com.entity.unity.studentRegLogIn.EmailPassLogin
 
 class ChosserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +23,7 @@ class ChosserActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 R.id.btn_student -> {
-                    val intent= Intent(this,EmailPassLogin::class.java)
+                    val intent= Intent(this, EmailPassLogin::class.java)
                     startActivity(intent)
                 }
                 else -> Toast.makeText(this,"Please Select a Role",Toast.LENGTH_SHORT).show()

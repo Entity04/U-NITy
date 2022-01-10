@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNITy">
         <activity
-            android:name=".CounsellorChattingActivity"
+            android:name=".counsellorChat.CounsellorChattingActivity"
             android:exported="false" />
         <activity
             android:name=".CounsellorLoginRegister.CounsellorRegister"
@@ -23,17 +23,17 @@
             android:name=".CounsellorLoginRegister.CounsellorLogin"
             android:exported="false" />
         <activity
-            android:name=".CounsellorHome"
+            android:name=".counsellorChat.CounsellorHome"
             android:exported="false" />
         <activity
             android:name=".ChosserActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".ChattingActivity"
+            android:name=".studentChat.ChattingActivity"
             android:exported="false" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".studentChat.ChatActivity"
             android:exported="false" />
         <activity
             android:name=".CreateFeed"
@@ -43,15 +43,15 @@
             android:exported="true"
             android:label="@string/title_activity_main2" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".studentRegLogIn.ForgotPasswordActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".studentRegLogIn.RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".EmailPassLogin"
+            android:name=".studentRegLogIn.EmailPassLogin"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

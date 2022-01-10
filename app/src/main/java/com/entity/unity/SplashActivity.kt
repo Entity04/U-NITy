@@ -3,17 +3,11 @@ package com.entity.unity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.util.Log
-import android.view.View
-import android.widget.Toast
+import com.entity.unity.counsellorChat.CounsellorHome
 import com.entity.unity.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
-import java.util.concurrent.CountDownLatch
-import kotlin.properties.Delegates
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var mDbRef: DatabaseReference

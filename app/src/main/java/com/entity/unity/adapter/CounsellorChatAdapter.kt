@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.entity.unity.ChattingActivity
-import com.entity.unity.CounsellorChattingActivity
+import com.entity.unity.counsellorChat.CounsellorChattingActivity
 import com.entity.unity.R
 import com.entity.unity.model.Student
 class CounsellorChatAdapter(val context: Context, val userList:ArrayList<Student>): RecyclerView.Adapter<CounsellorChatAdapter.CounsellorChatViewHolder>() {
@@ -27,7 +26,7 @@ class CounsellorChatAdapter(val context: Context, val userList:ArrayList<Student
         holder.tvName.text=currentUser.email
         holder.itemView.setOnClickListener{
             val intent= Intent(context, CounsellorChattingActivity::class.java)
-            intent.putExtra("name",currentUser.email)
+            intent.putExtra("email",currentUser.email)
             intent.putExtra("uid",currentUser.studentuid)
             context.startActivity(intent)
         }

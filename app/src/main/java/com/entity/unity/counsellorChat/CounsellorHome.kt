@@ -1,4 +1,4 @@
-package com.entity.unity
+package com.entity.unity.counsellorChat
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +10,8 @@ import android.view.View
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.entity.unity.ChosserActivity
+import com.entity.unity.R
 import com.entity.unity.adapter.CounsellorChatAdapter
 import com.entity.unity.model.Student
 import com.google.firebase.auth.FirebaseAuth

@@ -1,6 +1,5 @@
-package com.entity.unity
+package com.entity.unity.counsellorChat
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -9,9 +8,9 @@ import android.widget.ImageView
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.entity.unity.R
 import com.entity.unity.adapter.CounsellorMessageAdapter
 import com.entity.unity.model.MessageData
-import com.entity.unity.model.Student
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -31,7 +30,7 @@ class CounsellorChattingActivity : AppCompatActivity() {
         val actionBar: ActionBar? = supportActionBar
         actionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        val name = intent.getStringExtra("email")
+        val email= intent.getStringExtra("email")
         val recieverUid = intent.getStringExtra("uid")
         val senderUid = FirebaseAuth.getInstance().currentUser?.uid
         mDbRef = FirebaseDatabase.getInstance().getReference()
@@ -39,7 +38,7 @@ class CounsellorChattingActivity : AppCompatActivity() {
         senderRoom = recieverUid + senderUid
         recieverRoom = senderUid + recieverUid
 
-        supportActionBar?.title = name
+        supportActionBar?.title = email
 
         chatRecyclerView = findViewById(R.id.chatRecyclerView)
 

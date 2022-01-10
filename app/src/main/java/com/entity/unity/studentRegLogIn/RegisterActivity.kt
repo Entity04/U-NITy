@@ -1,4 +1,4 @@
-package com.entity.unity
+package com.entity.unity.studentRegLogIn
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.entity.unity.model.User
+import com.entity.unity.MainActivity2
+import com.entity.unity.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
