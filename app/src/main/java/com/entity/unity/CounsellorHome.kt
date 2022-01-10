@@ -1,8 +1,11 @@
 package com.entity.unity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,5 +50,22 @@ class CounsellorHome : AppCompatActivity() {
             }
 
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.counsellor_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId)
+        {
+            R.id.menusignOut -> {
+                FirebaseAuth.getInstance().signOut()
+                startActivity(Intent(this, ChosserActivity::class.java))
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
