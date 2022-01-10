@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
+import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.ChosserActivity
@@ -28,6 +29,10 @@ class CounsellorHome : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_counsellor_home)
         Log.d("Back","OnCreate")
+
+        val actionBar: ActionBar? = supportActionBar
+        actionBar!!.title="Students"
+
         pbChat=findViewById(R.id.pbChat)
         mAuth= FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()

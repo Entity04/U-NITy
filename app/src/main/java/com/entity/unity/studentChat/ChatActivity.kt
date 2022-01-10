@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
+import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.R
@@ -26,6 +27,9 @@ class ChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
+        val actionBar: ActionBar? = supportActionBar
+        actionBar!!.title="Counsellors"
+
         pbChat=findViewById(R.id.pbChat)
         mAuth= FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()
@@ -39,7 +43,6 @@ class ChatActivity : AppCompatActivity() {
         mDbRef.child("user").addValueEventListener(object : ValueEventListener {
             //@SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
-
                 userList.clear()
                 for(postSnapshot in snapshot.children){
                     val currentUser= postSnapshot.getValue(User::class.java)
