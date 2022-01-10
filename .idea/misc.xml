@@ -18,7 +18,7 @@
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatting.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chosser.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_chatting.xml" value="0.25" />
-        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_home.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_home.xml" value="0.264" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_login.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_register.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_create_feed.xml" value="0.4" />
@@ -42,6 +42,7 @@
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/layout/user_layout.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Prasant Poonia/AndroidStudioProjects/U-NITy/app/src/main/res/menu/counsellor_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

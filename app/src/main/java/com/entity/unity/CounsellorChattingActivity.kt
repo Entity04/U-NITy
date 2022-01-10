@@ -3,8 +3,10 @@ package com.entity.unity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.adapter.CounsellorMessageAdapter
@@ -25,6 +27,10 @@ class CounsellorChattingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_counsellor_chatting)
+
+        val actionBar: ActionBar? = supportActionBar
+        actionBar!!.setDisplayHomeAsUpEnabled(true)
+
         val name = intent.getStringExtra("email")
         val recieverUid = intent.getStringExtra("uid")
         val senderUid = FirebaseAuth.getInstance().currentUser?.uid
@@ -74,10 +80,17 @@ class CounsellorChattingActivity : AppCompatActivity() {
                 }
             messageBox.setText("")
         }
-        val back: ImageView = findViewById(R.id.counsellorBack)
-        back.setOnClickListener {
-            startActivity(Intent(this,CounsellorHome::class.java))
-            finish()
+    }
+    @Override
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId)
+        {
+            android.R.id.home ->
+            {
+                finish()
+                return true
+            }
         }
+        return super.onOptionsItemSelected(item)
     }
 }

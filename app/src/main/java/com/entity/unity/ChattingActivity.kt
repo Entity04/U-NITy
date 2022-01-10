@@ -5,8 +5,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.model.MessageData
@@ -29,6 +31,9 @@ class ChattingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chatting)
+
+        val actionBar: ActionBar? = supportActionBar
+        actionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val name= intent.getStringExtra("name")
         val recieverUid= intent.getStringExtra("uid")
@@ -100,11 +105,18 @@ class ChattingActivity : AppCompatActivity() {
                 }
             messageBox.setText("")
         }
+    }
 
-        val back:ImageView=findViewById(R.id.back)
-        back.setOnClickListener {
-            startActivity(Intent(this,ChatActivity::class.java))
-            finish()
+    @Override
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId)
+        {
+            android.R.id.home ->
+            {
+                finish()
+                return true
+            }
         }
+        return super.onOptionsItemSelected(item)
     }
 }
