@@ -13,8 +13,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-
 import com.entity.unity.databinding.ActivityMain2Binding
+
+
 import com.entity.unity.uibot.Chatbot
 import com.entity.unity.studentChat.ChatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -87,7 +88,7 @@ startActivity(Intent(this, Chatbot::class.java))
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return toggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item)
-    }
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)// toggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item)
+    }*/
 }

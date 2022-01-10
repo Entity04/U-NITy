@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="#E4E4E4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,14 +42,18 @@
             android:background="@drawable/msg_box_bg"
             android:hint="Type a message"
             android:paddingLeft="15dp" />
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button"
+            android:backgroundTint="#26A69A"
+            android:text="Send"
+            android:textColor="@android:color/white" />
 
-        <ImageView
-            android:id="@+id/sentButton"
-            android:layout_width="57dp"
-            android:layout_height="50dp"
-            android:layout_weight="20"
-            android:layout_marginRight="5dp"
-            android:src="@drawable/ic_baseline_send_24" />
+
 
     </LinearLayout>
 

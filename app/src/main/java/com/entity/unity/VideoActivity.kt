@@ -1,10 +1,12 @@
 package com.entity.unity
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -21,6 +23,7 @@ import androidx.navigation.navArgument
 
 import com.example.entityyvc.ui.theme.AgoravcTheme
 import com.example.entityyvc.ui.theme.RoomScreen
+import io.agora.agorauikit_android.AgoraSettings
 
 
 const val APP_ID="dc9ae93855584b78a0788d17227ee785"
@@ -59,5 +62,15 @@ NavHost(navController = navController, startDestination = "room_screen"
                 }
             }
         }
+    }
+    fun uisettings():AgoraSettings{
+        val agoraSettings=AgoraSettings()
+        agoraSettings.colors.buttonBackgroundColor= Color.BLUE
+        agoraSettings.colors.buttonBackgroundColor=Color.TRANSPARENT
+        agoraSettings.buttonPosition=AgoraSettings.Position.RIGHT
+        agoraSettings.enabledButtons= mutableSetOf(AgoraSettings.BuiltinButton.CAMERA,
+        AgoraSettings.BuiltinButton.MIC,AgoraSettings.BuiltinButton.FLIP)
+
+        return agoraSettings
     }
 }
