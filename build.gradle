@@ -10,9 +10,12 @@ buildscript {
         google()
         maven {
             url "https://maven.google.com"
-        }
+            }
         jcenter()
 
+        maven {
+            url "https://dl.bintray.com/microsoftazuremobile/SDK"
+        }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.4"

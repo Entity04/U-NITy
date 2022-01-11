@@ -7,6 +7,7 @@ plugins {
     id 'kotlin-android-extensions'
 //    id 'kotlin-parcelize'
 
+
 }
 
 android {
@@ -108,4 +109,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'com.karumi:dexter:6.2.2'
+
+
 }

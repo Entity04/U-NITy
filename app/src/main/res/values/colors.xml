@@ -9,5 +9,6 @@
     <color name="blue_grey_700">#37474f</color>
     <color name="grey_900">#212121</color>
     <color name="image_background">#E1E1E1</color>
+    <color name="red">#FF0000</color>
 
 </resources>
