@@ -68,10 +68,9 @@ class HealthFragment : Fragment() {
             val list: MutableList<DocumentSnapshot> = it.documents
             for(d in list)
             {
-                val uid=FirebaseAuth.getInstance().currentUser!!.uid
                 val id:String=d.id.toString()
                 val gsReference = storage.getReference("images/$id")
-                val post: Post=Post(id,uid,d.get("description").toString(),d.get("likes").toString(),gsReference,)
+                val post: Post=Post(id,d.get("uid").toString(),d.get("description").toString(),d.get("likes").toString(),gsReference,)
                 postsList.add(post)
             }
             adapter.notifyDataSetChanged()

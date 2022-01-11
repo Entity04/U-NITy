@@ -51,7 +51,7 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
         val localFile = File.createTempFile("images", ".jpeg")
         //OnClickListener
         holder.thumpUp.setOnClickListener {
-            val userid = FirebaseAuth.getInstance().currentUser!!.uid
+            val userid = FirebaseAuth.getInstance().uid.toString()
             if (curr_post.likedBy[userid] == false) {
                 val db = FirebaseFirestore.getInstance()
                 db.collection("Feed").document(curr_post.id)
@@ -78,8 +78,9 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
             val popup = PopupMenu(context, holder.itemView.ivDots)
             popup.inflate(R.menu.dots_menu)
             popup.setOnMenuItemClickListener {
-                val uid = FirebaseAuth.getInstance().currentUser!!.uid
+                val uid = FirebaseAuth.getInstance().uid.toString()
                 if (uid == curr_post.uid) {
+                    Log.d("Delete",uid+curr_post.uid)
                     val db = FirebaseFirestore.getInstance()
                     db.collection("Feed").document(curr_post.id).delete()
                     val storage =
@@ -87,7 +88,6 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
                     storage.delete()
                     posts.removeAt(position)
                     notifyItemRemoved(position)
-                    notifyDataSetChanged()
                 }
                 else
                 {
