@@ -1,14 +1,18 @@
 package com.entity.unity.counsellorChat
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.entity.unity.FirebaseServ
 import com.entity.unity.R
+import com.entity.unity.VideoActivity
 import com.entity.unity.adapter.CounsellorMessageAdapter
 import com.entity.unity.model.MessageData
 import com.google.firebase.auth.FirebaseAuth
@@ -58,6 +62,7 @@ class CounsellorChattingActivity : AppCompatActivity() {
                     messageList.clear()
                     for (postSnapshot in snapshot.children) {
                         val message = postSnapshot.getValue(MessageData::class.java)
+
                         messageList.add(message!!)
                     }
                     chatRecyclerView.smoothScrollToPosition(messageAdapter.itemCount)
@@ -80,6 +85,11 @@ class CounsellorChattingActivity : AppCompatActivity() {
             messageBox.setText("")
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.vc,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
     @Override
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId)
@@ -88,6 +98,9 @@ class CounsellorChattingActivity : AppCompatActivity() {
             {
                 finish()
                 return true
+            }
+            R.id.vc->{
+                startActivity(Intent(this,VideoActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)

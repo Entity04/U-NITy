@@ -2,7 +2,9 @@ package com.entity.unity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -18,10 +20,16 @@ import com.entity.unity.databinding.ActivityMain2Binding
 
 import com.entity.unity.uibot.Chatbot
 import com.entity.unity.studentChat.ChatActivity
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.GoogleApiAvailability
 import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity2 : AppCompatActivity() {
+    var mainActivity: MainActivity2? = null
+    var isvisible = false
+    private val TAG = "MainActivity2"
+    private val PLAY_SERVICES_RESOLUTION_REQUEST = 9000
 
     private lateinit var binding: ActivityMain2Binding
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -33,7 +41,9 @@ class MainActivity2 : AppCompatActivity() {
 
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
+mainActivity=this
+        registerWithNotificationHubs()
+        FirebaseServ().createChannelAndHandleNotifications(applicationContext)
         val navView: BottomNavigationView = binding.navView
         //binding.navView.setupWithNavController(navController)
         navController = findNavController(R.id.nav_host_fragment_activity_main2)
@@ -71,6 +81,51 @@ startActivity(Intent(this, Chatbot::class.java))
             true
         }
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+    override fun onResume() {
+        super.onResume()
+        isvisible = true
+
+    }
+
+
+
+    fun ToastNotify(notificationMessage: String?) {
+        runOnUiThread {
+            Toast.makeText(this@MainActivity2, notificationMessage, Toast.LENGTH_LONG).show()
+
+
+        }
+    }
+
+    private fun checkPlayServices(): Boolean {
+        val apiAvailability = GoogleApiAvailability.getInstance()
+        val resultCode = apiAvailability.isGooglePlayServicesAvailable(this)
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (apiAvailability.isUserResolvableError(resultCode)) {
+                apiAvailability.getErrorDialog(this, resultCode, PLAY_SERVICES_RESOLUTION_REQUEST)
+                    .show()
+            } else {
+                Log.i(TAG, "This device is not supported by Google Play Services.")
+                ToastNotify(
+
+                    "This device is not supported by Google Play Services."
+
+                )
+                finish()
+            }
+            return false
+        }
+        return true
+    }
+
+
+    fun registerWithNotificationHubs() {
+        if (checkPlayServices()) {
+            // Start IntentService to register this application with FCM.
+            val intent = Intent(this, RegistrationIntentService::class.java)
+            startService(intent)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

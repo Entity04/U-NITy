@@ -54,6 +54,7 @@ android {
 dependencies {
     implementation 'com.google.firebase:firebase-database-ktx:20.0.3'
     implementation 'androidx.wear.compose:compose-material:+'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.0'
 
     apply plugin: 'kotlin-kapt'
 
@@ -73,7 +74,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     // Lifecycles only (without ViewModel or LiveData)
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
-
+    implementation 'com.microsoft.azure:notification-hubs-android-sdk:0.6@aar'
     // Saved state module for ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
@@ -111,4 +112,9 @@ dependencies {
     implementation 'com.karumi:dexter:6.2.2'
 
 
+}
+repositories {
+    maven {
+        url "https://dl.bintray.com/microsoftazuremobile/SDK"
+    }
 }

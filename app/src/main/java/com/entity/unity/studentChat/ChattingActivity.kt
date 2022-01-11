@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Message
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.ActionBar
@@ -23,7 +24,7 @@ class ChattingActivity : AppCompatActivity() {
 
     private lateinit var chatRecyclerView: RecyclerView
     private lateinit var messageBox: EditText
-    private lateinit var sentButton: ImageView
+    private lateinit var sentButton: Button
     private lateinit var messageAdapter: MessageAdapter
     private lateinit var messageList: ArrayList<MessageData>
     private lateinit var mDbRef: DatabaseReference

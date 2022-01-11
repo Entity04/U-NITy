@@ -13,6 +13,8 @@ import com.entity.unity.CreateFeed
 import com.entity.unity.adapter.FeedAdapter
 import com.entity.unity.databinding.FragmentHealthBinding
 import com.entity.unity.model.Post
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -48,6 +50,7 @@ class HealthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.addFeed.setOnClickListener {
             val intent= Intent(requireActivity(),CreateFeed::class.java)
+
             startActivity(intent)
         }
 
