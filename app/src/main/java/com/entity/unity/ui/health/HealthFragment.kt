@@ -70,7 +70,7 @@ class HealthFragment : Fragment() {
             {
                 val id:String=d.id.toString()
                 val gsReference = storage.getReference("images/$id")
-                val post: Post=Post(id,d.get("description").toString(),d.get("likes").toString(),gsReference)
+                val post: Post=Post(id,d.get("uid").toString(),d.get("description").toString(),d.get("likes").toString(),gsReference,)
                 postsList.add(post)
             }
             adapter.notifyDataSetChanged()

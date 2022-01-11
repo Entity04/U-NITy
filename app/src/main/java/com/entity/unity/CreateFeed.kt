@@ -86,6 +86,7 @@ class CreateFeed : AppCompatActivity() {
             val mp= HashMap<String,String>()
             mp["description"]=desc.text.toString()
             mp["likes"]= 0.toString()
+            mp["uid"]=FirebaseAuth.getInstance().uid.toString()
             db.collection("Feed").document(postid).set(mp)
                 .addOnSuccessListener {
                 uploadImage()
