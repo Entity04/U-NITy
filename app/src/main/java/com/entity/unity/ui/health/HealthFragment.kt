@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.CreateFeed
+import com.entity.unity.R
 import com.entity.unity.adapter.FeedAdapter
 import com.entity.unity.databinding.FragmentHealthBinding
 import com.entity.unity.model.Post
@@ -41,8 +43,6 @@ class HealthFragment : Fragment() {
             ViewModelProvider(this).get(HealthViewModel::class.java)
         _binding = FragmentHealthBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-
         return root
     }
 
@@ -50,7 +50,6 @@ class HealthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.addFeed.setOnClickListener {
             val intent= Intent(requireActivity(),CreateFeed::class.java)
-
             startActivity(intent)
         }
 
@@ -59,6 +58,9 @@ class HealthFragment : Fragment() {
         feedRecyclerView=binding.feedRecyclerview
         feedRecyclerView.layoutManager= LinearLayoutManager(requireActivity())
         feedRecyclerView.adapter=adapter
+
+        val likeButton= getView()?.findViewById<ImageView>(R.id.thump_up)
+
         val db= FirebaseFirestore.getInstance()
 
         val storage = FirebaseStorage.getInstance()
@@ -68,7 +70,7 @@ class HealthFragment : Fragment() {
             {
                 val id:String=d.id.toString()
                 val gsReference = storage.getReference("images/$id")
-                val post: Post=Post(d.get("description").toString(),d.get("likes").toString(),gsReference)
+                val post: Post=Post(id,d.get("description").toString(),d.get("likes").toString(),gsReference)
                 postsList.add(post)
             }
             adapter.notifyDataSetChanged()

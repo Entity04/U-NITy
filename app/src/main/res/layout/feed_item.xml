@@ -76,17 +76,19 @@
                 android:layout_weight="0.7">
 
                 <ImageView
+                    android:id="@+id/thump_up"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/reactions"
                     android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/reactions"
+                    android:clickable="true"
                     android:src="@drawable/ic_thums_up" />
 
                 <TextView
                     android:id="@+id/reactions"
                     android:layout_width="wrap_content"
-                    android:layout_alignParentEnd="true"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:layout_gravity="center"
                     android:text="0"
                     android:textSize="18sp" />
