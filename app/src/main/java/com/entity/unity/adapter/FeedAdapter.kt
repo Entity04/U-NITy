@@ -84,7 +84,7 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
                     val db = FirebaseFirestore.getInstance()
                     db.collection("Feed").document(curr_post.id).delete()
                     val storage =
-                        FirebaseStorage.getInstance().getReference("images/${curr_post.id}")
+                        FirebaseStorage.getInstance().reference.child("images/${curr_post.id}")
                     storage.delete()
                     posts.removeAt(position)
                     notifyItemRemoved(position)
