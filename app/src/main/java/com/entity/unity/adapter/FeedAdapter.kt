@@ -19,7 +19,9 @@ import com.entity.unity.FirebaseServ
 import com.entity.unity.MainActivity2
 import com.entity.unity.R
 import com.entity.unity.model.Post
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.feed_item.view.*
 import java.io.File
 
@@ -49,24 +51,49 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
         val localFile = File.createTempFile("images", ".jpeg")
         //OnClickListener
         holder.thumpUp.setOnClickListener {
-            val db = FirebaseFirestore.getInstance()
-            db.collection("Feed").document(curr_post.id)
-                .update("likes", (++like).toString()).addOnSuccessListener {
-                    holder.likes.text = like.toString()
-                    holder.thumpUp.setImageResource(R.drawable.ic_blue_thumb_up)
-                }.addOnFailureListener {
-                    Log.d("Error", "$it + ${curr_post.id}")
-                }
+            val userid = FirebaseAuth.getInstance().currentUser!!.uid
+            if (curr_post.likedBy[userid] == false) {
+                val db = FirebaseFirestore.getInstance()
+                db.collection("Feed").document(curr_post.id)
+                    .update("likes", (++like).toString()).addOnSuccessListener {
+                        holder.likes.text = like.toString()
+                        holder.thumpUp.setImageResource(R.drawable.ic_blue_thumb_up)
+                    }.addOnFailureListener {
+                        Log.d("Error", "$it + ${curr_post.id}")
+                    }
+                curr_post.likedBy[userid] = true
+            } else {
+                val db = FirebaseFirestore.getInstance()
+                db.collection("Feed").document(curr_post.id)
+                    .update("likes", (--like).toString()).addOnSuccessListener {
+                        holder.likes.text = like.toString()
+                        holder.thumpUp.setImageResource(R.drawable.ic_thums_up)
+                    }.addOnFailureListener {
+                        Log.d("Error", "$it + ${curr_post.id}")
+                    }
+                curr_post.likedBy[userid] = false
+            }
         }
         holder.itemView.ivDots.setOnClickListener {
             val popup = PopupMenu(context, holder.itemView.ivDots)
             popup.inflate(R.menu.dots_menu)
             popup.setOnMenuItemClickListener {
-                val db = FirebaseFirestore.getInstance()
-                db.collection("Feed").document(curr_post.id).delete()
-                posts.removeAt(position)
-                notifyItemRemoved(position)
-                notifyDataSetChanged()
+                val uid = FirebaseAuth.getInstance().currentUser!!.uid
+                if (uid == curr_post.uid) {
+                    val db = FirebaseFirestore.getInstance()
+                    db.collection("Feed").document(curr_post.id).delete()
+                    val storage =
+                        FirebaseStorage.getInstance().getReference("images/${curr_post.id}")
+                    storage.delete()
+                    posts.removeAt(position)
+                    notifyItemRemoved(position)
+                    notifyDataSetChanged()
+                }
+                else
+                {
+                    Toast.makeText(context,"You don't have Permission to delete this Post",Toast.LENGTH_LONG)
+                        .show()
+                }
                 true
             }
             popup.show()
