@@ -52,7 +52,7 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
         //OnClickListener
         holder.thumpUp.setOnClickListener {
             val userid = FirebaseAuth.getInstance().uid.toString()
-            if (curr_post.likedBy[userid] == false) {
+            if (curr_post.likedBy.isEmpty() || curr_post.likedBy[userid] == false) {
                 val db = FirebaseFirestore.getInstance()
                 db.collection("Feed").document(curr_post.id)
                     .update("likes", (++like).toString()).addOnSuccessListener {
