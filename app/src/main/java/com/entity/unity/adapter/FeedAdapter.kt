@@ -64,6 +64,8 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
             popup.setOnMenuItemClickListener {
                 val db = FirebaseFirestore.getInstance()
                 db.collection("Feed").document(curr_post.id).delete()
+                posts.removeAt(position)
+                notifyItemRemoved(position)
                 notifyDataSetChanged()
                 true
             }
