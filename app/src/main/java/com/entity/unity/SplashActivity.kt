@@ -15,6 +15,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+        supportActionBar?.hide()
         mDbRef = FirebaseDatabase.getInstance().getReference()
         val currentUser = FirebaseAuth.getInstance().currentUser
         var currentUserId = ""
