@@ -42,7 +42,7 @@ class FeedAdapter(private val posts : ArrayList<Post>, private val context : Con
                 popup.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener{
                     override fun onMenuItemClick(p0: MenuItem?): Boolean {
                         //Log.e("menu","Delete clicked")
-
+                        //
                         return true
                     }
 
