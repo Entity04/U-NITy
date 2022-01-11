@@ -5,14 +5,18 @@ import android.graphics.BitmapFactory
 import android.media.Image
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.entity.unity.R
 import com.entity.unity.model.Post
+import kotlinx.android.synthetic.main.feed_item.view.*
 import java.io.File
 
 
@@ -31,6 +35,20 @@ class FeedAdapter(private val posts : ArrayList<Post>, private val context : Con
         override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
             val curr_post = posts[position]
             holder.description.text = curr_post.desc
+
+            holder.itemView.ivDots.setOnClickListener {
+                val popup = PopupMenu(context, holder.itemView.ivDots)
+                popup.inflate(R.menu.dots_menu)
+                popup.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener{
+                    override fun onMenuItemClick(p0: MenuItem?): Boolean {
+                        //Log.e("menu","Delete clicked")
+
+                        return true
+                    }
+
+                })
+                popup.show()
+            }
 
             val localFile = File.createTempFile("images", ".jpeg")
             curr_post.gref!!.getFile(localFile)

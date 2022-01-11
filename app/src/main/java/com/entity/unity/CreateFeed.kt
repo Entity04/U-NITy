@@ -89,7 +89,8 @@ class CreateFeed : AppCompatActivity() {
             db.collection("Feed").document(postid).set(mp)
                 .addOnSuccessListener {
                 uploadImage()
-                    FirebaseServ().sendNotification("Hola!! New Post Updated By one Of your Friends.Do Check")
+                    val name=mauth.currentUser!!.email
+                    FirebaseServ().sendNotification("Hola!! New Post Updated By " + name + ". Do Checkout")
                 val intent=Intent(this,MainActivity2::class.java)
                 startActivity(intent)
             }.addOnFailureListener {

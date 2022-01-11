@@ -23,6 +23,8 @@ import com.entity.unity.MainActivity2
 import com.entity.unity.VideoViewmodel
 import com.entity.unity.constants.Constants
 import com.entity.unity.counsellorChat.CounsellorChattingActivity
+import com.entity.unity.counsellorChat.CounsellorHome
+import com.entity.unity.studentChat.ChatActivity
 import com.entity.unity.studentChat.ChattingActivity
 import com.example.entityyvc.ui.theme.AgoravcTheme
 import com.google.firebase.auth.FirebaseAuth
@@ -64,9 +66,9 @@ fun VideoScreen(
             currentUserId = currentUser!!.uid
         }
         if(Constants.hashmap[currentUserId]==true)
-            context.startActivity(Intent(context, CounsellorChattingActivity::class.java))
+            context.startActivity(Intent(context, CounsellorHome::class.java))
         else
-            context.startActivity(Intent(context, ChattingActivity::class.java))
+            context.startActivity(Intent(context, ChatActivity::class.java))
     }
     if(viewmodel._hasadPermi.value && viewmodel._hasCamPermi.value) {
 
