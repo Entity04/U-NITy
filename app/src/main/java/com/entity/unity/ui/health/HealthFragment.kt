@@ -20,6 +20,9 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
+
 
 class HealthFragment : Fragment() {
 
@@ -53,14 +56,27 @@ class HealthFragment : Fragment() {
             startActivity(intent)
         }
 
+        val swipeRefreshLayout:SwipeRefreshLayout=view.findViewById(R.id.swipeRefresh)
+
         postsList=ArrayList()
         adapter= FeedAdapter(postsList,requireContext())
         feedRecyclerView=binding.feedRecyclerview
         feedRecyclerView.layoutManager= LinearLayoutManager(requireActivity())
         feedRecyclerView.adapter=adapter
 
-        val likeButton= getView()?.findViewById<ImageView>(R.id.thump_up)
+        swipeRefreshLayout.setOnRefreshListener(OnRefreshListener {
+            swipeRefreshLayout.setRefreshing(false)
+            loadData()
+        })
 
+        val likeButton= getView()?.findViewById<ImageView>(R.id.thump_up)
+        loadData()
+
+    }
+
+    fun loadData(){
+
+        postsList.clear()
         val db= FirebaseFirestore.getInstance()
 
         val storage = FirebaseStorage.getInstance()
@@ -68,9 +84,15 @@ class HealthFragment : Fragment() {
             val list: MutableList<DocumentSnapshot> = it.documents
             for(d in list)
             {
-                val id:String=d.id.toString()
+                val id:String=d.id
                 val gsReference = storage.getReference("images/$id")
-                val post: Post=Post(id,d.get("uid").toString(),d.get("description").toString(),d.get("likes").toString(),gsReference,)
+                val post: Post=Post(
+                    id,
+                    d.get("uid").toString(),
+                    d.get("description").toString(),
+                    d.get("likes").toString(),
+                    gsReference
+                )
                 postsList.add(post)
             }
             adapter.notifyDataSetChanged()
