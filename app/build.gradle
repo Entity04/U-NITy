@@ -5,7 +5,8 @@ plugins {
     id 'kotlin-android'
     id 'com.google.gms.google-services'
     id 'kotlin-android-extensions'
-//    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    //id 'kotlin-parcelize'
 
 
 }
@@ -46,8 +47,8 @@ android {
         enabled = true
     }
     buildFeatures {
-        viewBinding true
-        compose true
+        viewBinding = true
+        compose = true
     }
 }
 dependencies {
@@ -55,7 +56,6 @@ dependencies {
     implementation 'androidx.wear.compose:compose-material:+'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.0.0'
 
-    apply plugin: 'kotlin-kapt'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
