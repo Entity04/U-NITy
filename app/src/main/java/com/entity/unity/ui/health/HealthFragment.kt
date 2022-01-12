@@ -90,21 +90,24 @@ class HealthFragment : Fragment() {
         val storage = FirebaseStorage.getInstance()
         db.collection("Feed").get().addOnSuccessListener{
             val list: MutableList<DocumentSnapshot> = it.documents
-            for(d in list)
-            {
-                val id:String=d.id
-                val gsReference = storage.getReference("images/$id")
-                val post: Post=Post(
-                    id,
-                    d.get("uid").toString(),
-                    d.get("description").toString(),
-                    d.get("likes").toString(),
-                    gsReference
-                )
-                postsList.add(post)
-            }
-            adapter.notifyDataSetChanged()
+            list.let {
+                for(d in list) {
+                    val id:String=d.id
+                    val gsReference = storage.getReference("images/$id")
+                    val post: Post=Post(
+                        id,
+                        d.get("uid").toString(),
+                        d.get("description").toString(),
+                        d.get("likes").toString(),
+                        gsReference,
+                        d.get("isLiked") as HashMap<String,Long>
+                    )
+                    postsList.add(post)
+                }
+                adapter.notifyDataSetChanged()
 
+
+            }
             stopLoading()
         }
     }
@@ -113,7 +116,7 @@ class HealthFragment : Fragment() {
         Handler().postDelayed({
             feedRecyclerView.visibility=View.VISIBLE
             animLoading.visibility=View.GONE
-        },4000)
+        },3000)
 
     }
 
@@ -122,3 +125,5 @@ class HealthFragment : Fragment() {
         _binding = null
     }
 }
+
+

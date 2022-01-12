@@ -45,8 +45,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.karumi.dexter.listener.single.PermissionListener
 import java.util.*
-
-
+import kotlin.collections.HashMap
 
 
 class CreateFeed : AppCompatActivity() {
@@ -83,19 +82,21 @@ class CreateFeed : AppCompatActivity() {
         }
         val db=FirebaseFirestore.getInstance()
         post.setOnClickListener {
-            val mp= HashMap<String,String>()
+            val map=HashMap<String,Long>()
+            val mp= HashMap<String,Any?>()
             mp["description"]=desc.text.toString()
             mp["likes"]= 0.toString()
             mp["uid"]=FirebaseAuth.getInstance().uid.toString()
+            mp["isLiked"]=map
             db.collection("Feed").document(postid).set(mp)
                 .addOnSuccessListener {
-                uploadImage()
+                    uploadImage()
                     FirebaseServ().sendNotification("Hello!! New Post Updated By one Of your Friends.Do Check")
-                val intent=Intent(this,MainActivity2::class.java)
-                startActivity(intent)
-            }.addOnFailureListener {
-                Toast.makeText(this, "Error Occured", Toast.LENGTH_SHORT).show()
-            }
+                    val intent=Intent(this,MainActivity2::class.java)
+                    startActivity(intent)
+                }.addOnFailureListener {
+                    Toast.makeText(this, "Error Occured", Toast.LENGTH_SHORT).show()
+                }
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

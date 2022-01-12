@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
+import androidx.compose.material.SnackbarDuration
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.entity.unity.FirebaseServ
@@ -47,6 +48,7 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
         val curr_post = posts[position]
         var like: Int = curr_post.like.toInt()
+
         holder.description.text = curr_post.desc
         holder.likes.text = curr_post.like
         val localFile = File.createTempFile("images", ".jpeg")
@@ -62,10 +64,21 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
                 Log.d("Error", it.toString())
             }
 
+        val userid = FirebaseAuth.getInstance().uid.toString()
+        val isLiked = curr_post.likedBy
+        val one:Long=1
+        val zero:Long =0
+        if(userid.isNotEmpty()) {
+
+            if (isLiked[userid] == one) {
+                holder.thumpUp.setImageResource(R.drawable.ic_blue_thumb_up)
+            }
+        }
+
 
         holder.thumpUp.setOnClickListener {
-            val userid = FirebaseAuth.getInstance().uid.toString()
-            if (curr_post.likedBy.isEmpty() || curr_post.likedBy[userid] == false) {
+
+            if (isLiked.isEmpty() || isLiked[userid] == zero) {
                 val db = FirebaseFirestore.getInstance()
                 db.collection("Feed").document(curr_post.id)
                     .update("likes", (++like).toString()).addOnSuccessListener {
@@ -74,7 +87,9 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
                     }.addOnFailureListener {
                         Log.d("Error", "$it + ${curr_post.id}")
                     }
-                curr_post.likedBy[userid] = true
+                isLiked[userid] = one
+                db.collection("Feed").document(curr_post.id)
+                    .update("isLiked", isLiked)
             } else {
                 val db = FirebaseFirestore.getInstance()
                 db.collection("Feed").document(curr_post.id)
@@ -84,7 +99,9 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
                     }.addOnFailureListener {
                         Log.d("Error", "$it + ${curr_post.id}")
                     }
-                curr_post.likedBy[userid] = false
+                isLiked[userid] = zero
+                db.collection("Feed").document(curr_post.id)
+                    .update("isLiked", isLiked)
             }
         }
         holder.itemView.ivDots.setOnClickListener {

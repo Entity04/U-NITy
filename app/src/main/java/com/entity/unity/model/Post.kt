@@ -1,6 +1,5 @@
 package com.entity.unity.model
 
-import android.text.BoringLayout
 import com.google.firebase.storage.StorageReference
 
 data class Post(
@@ -9,5 +8,5 @@ data class Post(
     val desc: String,
     val like: String = 0.toString(),
     val gref: StorageReference? = null,
-    val likedBy: HashMap<String,Boolean> = hashMapOf()
+    val likedBy: HashMap<String,Long>
 )
