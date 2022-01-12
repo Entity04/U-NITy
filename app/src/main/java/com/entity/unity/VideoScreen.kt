@@ -6,29 +6,25 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.agora.agorauikit_android.AgoraConnectionData
 import io.agora.agorauikit_android.AgoraVideoViewer
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import com.entity.unity.APP_ID
-import com.entity.unity.MainActivity2
-import com.entity.unity.VideoViewmodel
 import com.entity.unity.constants.Constants
-import com.entity.unity.counsellorChat.CounsellorChattingActivity
 import com.entity.unity.counsellorChat.CounsellorHome
-import com.entity.unity.studentChat.ChatActivity
-import com.entity.unity.studentChat.ChattingActivity
-import com.example.entityyvc.ui.theme.AgoravcTheme
+import com.entity.unity.ui.counsellor.CounsellorFragment
 import com.google.firebase.auth.FirebaseAuth
 import io.agora.agorauikit_android.AgoraSettings
+import android.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import com.entity.unity.studentChat.ChattingActivity
+
 
 @ExperimentalUnsignedTypes
 @Composable
@@ -67,8 +63,9 @@ fun VideoScreen(
         }
         if(Constants.hashmap[currentUserId]==true)
             context.startActivity(Intent(context, CounsellorHome::class.java))
-        else
-            context.startActivity(Intent(context, ChatActivity::class.java))
+        else {
+            context.startActivity(Intent(context, MainActivity2::class.java))
+        }
     }
     if(viewmodel._hasadPermi.value && viewmodel._hasCamPermi.value) {
 

@@ -3,7 +3,6 @@ package com.entity.unity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,7 +18,6 @@ import com.entity.unity.databinding.ActivityMain2Binding
 
 
 import com.entity.unity.uibot.Chatbot
-import com.entity.unity.studentChat.ChatActivity
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.firebase.auth.FirebaseAuth
@@ -41,7 +39,7 @@ class MainActivity2 : AppCompatActivity() {
 
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-mainActivity=this
+        mainActivity=this
         registerWithNotificationHubs()
         FirebaseServ().createChannelAndHandleNotifications(applicationContext)
         val navView: BottomNavigationView = binding.navView
@@ -52,7 +50,7 @@ mainActivity=this
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_mentalhealth,
-                R.id.navigation_exercise,
+                R.id.navigation_counsellor,
             ), binding.container
         )
         binding.navView.setupWithNavController(navController)
@@ -69,9 +67,6 @@ mainActivity=this
                     FirebaseAuth.getInstance().signOut()
                     startActivity(Intent(this, ChosserActivity::class.java))
                     finish()
-                }
-                R.id.nav_counselor -> {
-                    startActivity(Intent(this, ChatActivity::class.java))
                 }
                 R.id.chatbot->{
 startActivity(Intent(this, Chatbot::class.java))

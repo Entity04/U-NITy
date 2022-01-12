@@ -36,9 +36,7 @@
         <activity
             android:name=".studentChat.ChattingActivity"
             android:exported="false" />
-        <activity
-            android:name=".studentChat.ChatActivity"
-            android:exported="false" />
+
         <activity android:name=".uibot.Chatbot"
             android:exported="false"/>
 <activity android:name=".VideoActivity"

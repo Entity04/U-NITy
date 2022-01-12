@@ -12,14 +12,10 @@
         tools:layout="@layout/fragment_health" />
 
     <fragment
-        android:id="@+id/navigation_exercise"
-        android:name="com.entity.unity.ui.exercise.ExerciseFragment"
-        android:label="@string/exercise"
-        tools:layout="@layout/fragment_exercise" />
+        android:id="@+id/navigation_counsellor"
+        android:name="com.entity.unity.ui.counsellor.CounsellorFragment"
+        android:label="@string/nav_counselor"
+        tools:layout="@layout/fragment_counsellor" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.entity.unity.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+
 </navigation>

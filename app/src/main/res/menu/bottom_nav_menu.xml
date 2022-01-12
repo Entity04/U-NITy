@@ -7,8 +7,9 @@
         android:title="@string/mental_health" />
 
     <item
-        android:id="@+id/navigation_exercise"
-        android:icon="@drawable/cardioexercises"
-        android:title="@string/exercise" />
+        android:id="@+id/navigation_counsellor"
+        android:icon="@drawable/ic_nav_user"
+        android:title="@string/nav_counselor"
+        />
 
 </menu>
