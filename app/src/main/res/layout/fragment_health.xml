@@ -42,7 +42,7 @@
             android:layout_margin="20dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:src="@drawable/ic_baseline_add_24"
+            android:src="@drawable/ic_baseline_add_circle_outline_24"
             android:backgroundTint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
