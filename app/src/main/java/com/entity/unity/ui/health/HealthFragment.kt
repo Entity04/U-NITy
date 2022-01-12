@@ -2,10 +2,12 @@ package com.entity.unity.ui.health
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.compose.animation.core.animateDpAsState
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
+import com.airbnb.lottie.LottieAnimationView
 
 
 class HealthFragment : Fragment() {
@@ -31,6 +34,7 @@ class HealthFragment : Fragment() {
     private lateinit var adapter: FeedAdapter
     private lateinit var feedRecyclerView: RecyclerView
     private lateinit var postsList:ArrayList<Post>
+    private lateinit var animLoading:LottieAnimationView
 
 
     // This property is only valid between onCreateView and
@@ -56,6 +60,8 @@ class HealthFragment : Fragment() {
             startActivity(intent)
         }
 
+        animLoading=view.findViewById(R.id.animLoading)
+
         val swipeRefreshLayout:SwipeRefreshLayout=view.findViewById(R.id.swipeRefresh)
 
         postsList=ArrayList()
@@ -76,6 +82,8 @@ class HealthFragment : Fragment() {
 
     fun loadData(){
 
+        feedRecyclerView.visibility=View.GONE
+        animLoading.visibility=View.VISIBLE
         postsList.clear()
         val db= FirebaseFirestore.getInstance()
 
@@ -96,7 +104,17 @@ class HealthFragment : Fragment() {
                 postsList.add(post)
             }
             adapter.notifyDataSetChanged()
+
+            stopLoading()
         }
+    }
+
+    private fun stopLoading(){
+        Handler().postDelayed({
+            feedRecyclerView.visibility=View.VISIBLE
+            animLoading.visibility=View.GONE
+        },4000)
+
     }
 
     override fun onDestroyView() {

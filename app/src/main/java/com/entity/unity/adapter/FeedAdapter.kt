@@ -19,6 +19,7 @@ import com.entity.unity.FirebaseServ
 import com.entity.unity.MainActivity2
 import com.entity.unity.R
 import com.entity.unity.model.Post
+import com.entity.unity.ui.health.HealthFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -49,7 +50,19 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
         holder.description.text = curr_post.desc
         holder.likes.text = curr_post.like
         val localFile = File.createTempFile("images", ".jpeg")
-        //OnClickListener
+
+        curr_post.gref!!.getFile(localFile)
+            .addOnSuccessListener {
+                val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
+                holder.postimage.setImageBitmap(bitmap)
+
+            }.addOnFailureListener {
+                // Handle any errors
+
+                Log.d("Error", it.toString())
+            }
+
+
         holder.thumpUp.setOnClickListener {
             val userid = FirebaseAuth.getInstance().uid.toString()
             if (curr_post.likedBy.isEmpty() || curr_post.likedBy[userid] == false) {
@@ -99,14 +112,7 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
             popup.show()
         }
 
-        curr_post.gref!!.getFile(localFile)
-            .addOnSuccessListener {
-                val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
-                holder.postimage.setImageBitmap(bitmap)
-            }.addOnFailureListener {
-                // Handle any errors
-                Log.d("Error", it.toString())
-            }
+
 
     }
 
