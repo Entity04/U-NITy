@@ -6,6 +6,7 @@
     android:layout_marginHorizontal="2dp"
     android:layout_marginVertical="5dp"
     app:cardCornerRadius="18dp"
+    android:foreground="@drawable/button_bg"
     app:cardElevation="2dp">
 
         <TextView

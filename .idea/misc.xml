@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/btn_bg.xml" value="0.290625" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/button_bg.xml" value="0.290625" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/button_bg_2.xml" value="0.290625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_baseline_supervised_user_circle_24.xml" value="0.290625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_blue_thumb_up.xml" value="0.290625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_thums_up.xml" value="0.290625" />
@@ -19,7 +22,7 @@
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/chat_ui.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/feed_item.xml" value="0.536" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_counsellor.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_health.xml" value="0.4" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_health.xml" value="0.264" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/message_item.xml" value="0.18342391304347827" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/nav_header_main.xml" value="0.2033514492753623" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/recieve_layout.xml" value="0.18342391304347827" />
