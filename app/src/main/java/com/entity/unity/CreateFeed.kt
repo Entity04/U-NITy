@@ -84,6 +84,7 @@ class CreateFeed : AppCompatActivity() {
         val db=FirebaseFirestore.getInstance()
         post.setOnClickListener {
             val mp= HashMap<String,String>()
+            val map= HashMap<String,Boolean>()
             mp["description"]=desc.text.toString()
             mp["likes"]= 0.toString()
             mp["uid"]=FirebaseAuth.getInstance().uid.toString()

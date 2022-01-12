@@ -33,8 +33,8 @@ class HealthFragment : Fragment() {
     private var _binding: FragmentHealthBinding? = null
     private lateinit var adapter: FeedAdapter
     private lateinit var feedRecyclerView: RecyclerView
-    private lateinit var postsList:ArrayList<Post>
-    private lateinit var animLoading:LottieAnimationView
+    private lateinit var postsList: ArrayList<Post>
+    private lateinit var animLoading: LottieAnimationView
 
 
     // This property is only valid between onCreateView and
@@ -56,64 +56,65 @@ class HealthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.addFeed.setOnClickListener {
-            val intent= Intent(requireActivity(),CreateFeed::class.java)
+            val intent = Intent(requireActivity(), CreateFeed::class.java)
             startActivity(intent)
         }
 
-        animLoading=view.findViewById(R.id.animLoading)
+        animLoading = view.findViewById(R.id.animLoading)
 
-        val swipeRefreshLayout:SwipeRefreshLayout=view.findViewById(R.id.swipeRefresh)
+        val swipeRefreshLayout: SwipeRefreshLayout = view.findViewById(R.id.swipeRefresh)
 
-        postsList=ArrayList()
-        adapter= FeedAdapter(postsList,requireContext())
-        feedRecyclerView=binding.feedRecyclerview
-        feedRecyclerView.layoutManager= LinearLayoutManager(requireActivity())
-        feedRecyclerView.adapter=adapter
+        postsList = ArrayList()
+        adapter = FeedAdapter(postsList, requireContext())
+        feedRecyclerView = binding.feedRecyclerview
+        feedRecyclerView.layoutManager = LinearLayoutManager(requireActivity())
+        feedRecyclerView.adapter = adapter
 
         swipeRefreshLayout.setOnRefreshListener(OnRefreshListener {
             swipeRefreshLayout.setRefreshing(false)
             loadData()
         })
 
-        val likeButton= getView()?.findViewById<ImageView>(R.id.thump_up)
+        val likeButton = getView()?.findViewById<ImageView>(R.id.thump_up)
         loadData()
 
     }
 
-    fun loadData(){
+    fun loadData() {
 
-        feedRecyclerView.visibility=View.GONE
-        animLoading.visibility=View.VISIBLE
+        feedRecyclerView.visibility = View.GONE
+        animLoading.visibility = View.VISIBLE
         postsList.clear()
-        val db= FirebaseFirestore.getInstance()
+        val db = FirebaseFirestore.getInstance()
 
         val storage = FirebaseStorage.getInstance()
-        db.collection("Feed").get().addOnSuccessListener{
+        db.collection("Feed").get().addOnSuccessListener {
             val list: MutableList<DocumentSnapshot> = it.documents
-            for(d in list)
-            {
-                val id:String=d.id
+            for (d in list) {
+                val id: String = d.id
                 val gsReference = storage.getReference("images/$id")
-                val post: Post=Post(
+                val post: Post = Post(
                     id,
                     d.get("uid").toString(),
                     d.get("description").toString(),
                     d.get("likes").toString(),
-                    gsReference
+                    gsReference,
+                    d.get("isLiked") as HashMap<String, Boolean>
                 )
                 postsList.add(post)
             }
+
             adapter.notifyDataSetChanged()
 
             stopLoading()
         }
     }
 
-    private fun stopLoading(){
+    private fun stopLoading() {
         Handler().postDelayed({
-            feedRecyclerView.visibility=View.VISIBLE
-            animLoading.visibility=View.GONE
-        },4000)
+            feedRecyclerView.visibility = View.VISIBLE
+            animLoading.visibility = View.GONE
+        }, 4000)
 
     }
 

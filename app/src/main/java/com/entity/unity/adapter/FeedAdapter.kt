@@ -46,7 +46,11 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
 
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
         val curr_post = posts[position]
+        val userid = FirebaseAuth.getInstance().uid.toString()
         var like: Int = curr_post.like.toInt()
+        if(curr_post.likedBy[userid]==true){
+            holder.thumpUp.setImageResource(R.drawable.ic_blue_thumb_up)
+        }
         holder.description.text = curr_post.desc
         holder.likes.text = curr_post.like
         val localFile = File.createTempFile("images", ".jpeg")
@@ -64,8 +68,9 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
 
 
         holder.thumpUp.setOnClickListener {
-            val userid = FirebaseAuth.getInstance().uid.toString()
-            if (curr_post.likedBy.isEmpty() || curr_post.likedBy[userid] == false) {
+            //userid = FirebaseAuth.getInstance().uid.toString()
+            val likedBy:HashMap<String,Boolean> = curr_post.likedBy
+            if (likedBy.isEmpty() || likedBy[userid] == false) {
                 val db = FirebaseFirestore.getInstance()
                 db.collection("Feed").document(curr_post.id)
                     .update("likes", (++like).toString()).addOnSuccessListener {
@@ -74,7 +79,9 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
                     }.addOnFailureListener {
                         Log.d("Error", "$it + ${curr_post.id}")
                     }
-                curr_post.likedBy[userid] = true
+                likedBy[userid] = true
+                db.collection("Feed").document(curr_post.id)
+                    .update("isLiked",likedBy)
             } else {
                 val db = FirebaseFirestore.getInstance()
                 db.collection("Feed").document(curr_post.id)
@@ -84,7 +91,9 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
                     }.addOnFailureListener {
                         Log.d("Error", "$it + ${curr_post.id}")
                     }
-                curr_post.likedBy[userid] = false
+                likedBy[userid] = false
+                db.collection("Feed").document(curr_post.id)
+                    .update("isLiked",likedBy)
             }
         }
         holder.itemView.ivDots.setOnClickListener {
