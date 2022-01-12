@@ -66,11 +66,10 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
 
         val userid = FirebaseAuth.getInstance().uid.toString()
         val isLiked = curr_post.likedBy
-        val one:Long=1
-        val zero:Long =0
+
         if(userid.isNotEmpty()) {
 
-            if (isLiked[userid] == one) {
+            if (isLiked[userid] == 1L) {
                 holder.thumpUp.setImageResource(R.drawable.ic_blue_thumb_up)
             }
         }
@@ -78,19 +77,7 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
 
         holder.thumpUp.setOnClickListener {
 
-            if (isLiked.isEmpty() || isLiked[userid] == zero) {
-                val db = FirebaseFirestore.getInstance()
-                db.collection("Feed").document(curr_post.id)
-                    .update("likes", (++like).toString()).addOnSuccessListener {
-                        holder.likes.text = like.toString()
-                        holder.thumpUp.setImageResource(R.drawable.ic_blue_thumb_up)
-                    }.addOnFailureListener {
-                        Log.d("Error", "$it + ${curr_post.id}")
-                    }
-                isLiked[userid] = one
-                db.collection("Feed").document(curr_post.id)
-                    .update("isLiked", isLiked)
-            } else {
+            if (isLiked[userid]==1L) {
                 val db = FirebaseFirestore.getInstance()
                 db.collection("Feed").document(curr_post.id)
                     .update("likes", (--like).toString()).addOnSuccessListener {
@@ -99,7 +86,20 @@ class FeedAdapter(private val posts: ArrayList<Post>, private val context: Conte
                     }.addOnFailureListener {
                         Log.d("Error", "$it + ${curr_post.id}")
                     }
-                isLiked[userid] = zero
+                isLiked[userid] = 0L
+                db.collection("Feed").document(curr_post.id)
+                    .update("isLiked", isLiked)
+
+            } else {
+                val db = FirebaseFirestore.getInstance()
+                db.collection("Feed").document(curr_post.id)
+                    .update("likes", (++like).toString()).addOnSuccessListener {
+                        holder.likes.text = like.toString()
+                        holder.thumpUp.setImageResource(R.drawable.ic_blue_thumb_up)
+                    }.addOnFailureListener {
+                        Log.d("Error", "$it + ${curr_post.id}")
+                    }
+                isLiked[userid] = 1L
                 db.collection("Feed").document(curr_post.id)
                     .update("isLiked", isLiked)
             }
