@@ -34,4 +34,5 @@
     <string name="lbl_camera">Camera</string>
     <string name="lbl_gallery">Gallery</string>
     <string name="Delete">Delete</string>
+    <string name="image_contentDescription">Profile</string>
 </resources>

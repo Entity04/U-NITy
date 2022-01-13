@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.MessageAdapter
 import com.entity.unity.R
-import com.entity.unity.VideoActivity
+import com.entity.unity.videocall.VideoActivity
 import com.entity.unity.model.MessageData
 import com.entity.unity.model.Student
 import com.google.firebase.auth.FirebaseAuth

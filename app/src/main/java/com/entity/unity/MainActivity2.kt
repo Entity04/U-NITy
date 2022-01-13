@@ -73,6 +73,10 @@ class MainActivity2 : AppCompatActivity() {
                 R.id.chatbot->{
 startActivity(Intent(this, Chatbot::class.java))
                 }
+                R.id.nav_my_profile->{
+                    startActivity(Intent(this,MyProfile::class.java))
+                }
+
 
             }
             true

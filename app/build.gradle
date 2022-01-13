@@ -39,8 +39,8 @@ android {
 
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.5.31'
+        //kotlinCompilerVersion '1.5.31'
+        kotlinCompilerExtensionVersion '1.0.5'
     }
     dataBinding {
         //noinspection DataBindingWithoutKapt
@@ -55,6 +55,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx:20.0.3'
     implementation 'androidx.wear.compose:compose-material:+'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.0.0'
+
 
 
     implementation 'androidx.core:core-ktx:1.7.0'

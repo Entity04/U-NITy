@@ -114,7 +114,7 @@ class HealthFragment : Fragment() {
         Handler().postDelayed({
             feedRecyclerView.visibility=View.VISIBLE
             animLoading.visibility=View.GONE
-        },3000)
+        },2000)
 
     }
 

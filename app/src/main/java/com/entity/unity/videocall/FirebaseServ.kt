@@ -18,6 +18,7 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import com.entity.unity.MainActivity
+import com.entity.unity.MainActivity2
 import com.entity.unity.R
 
 import com.google.firebase.messaging.RemoteMessage
