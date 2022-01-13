@@ -105,8 +105,6 @@ class HealthFragment : Fragment() {
                     postsList.add(post)
                 }
                 adapter.notifyDataSetChanged()
-
-
             }
             stopLoading()
         }

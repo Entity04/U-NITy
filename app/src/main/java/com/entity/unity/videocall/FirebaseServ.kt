@@ -51,7 +51,7 @@ class FirebaseServ : FirebaseMessagingService() {
     }
 
      fun sendNotification(msg: String?) {
-        val intent = Intent(ctx, MainActivity::class.java)
+        val intent = Intent(ctx, MainActivity2::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         mNotificationManager = ctx?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
         val contentIntent = PendingIntent.getActivity(
@@ -67,6 +67,7 @@ class FirebaseServ : FirebaseMessagingService() {
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setSmallIcon(R.drawable.ic_baseline_notifications_24)
             .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL)
+            .setAutoCancel(true)
         notificationBuilder.setContentIntent(contentIntent)
         mNotificationManager!!.notify(NOTIFICATION_ID, notificationBuilder.build())
     }

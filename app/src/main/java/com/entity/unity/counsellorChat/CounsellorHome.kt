@@ -29,7 +29,6 @@ class CounsellorHome : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_counsellor_home)
         Log.d("Back","OnCreate")
-
         val actionBar: ActionBar? = supportActionBar
         actionBar!!.title="Students"
 
