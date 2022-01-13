@@ -1,19 +1,14 @@
-package com.entity.unity
+package com.entity.unity.videocall
 
 import com.microsoft.windowsazure.messaging.NotificationHub
 
-import com.google.android.gms.tasks.OnSuccessListener
-
 import android.preference.PreferenceManager
-
-import android.content.SharedPreferences
 
 import android.content.Intent
 
 import android.app.IntentService
-import android.icu.util.TimeUnit
 import android.util.Log
-import com.google.firebase.installations.FirebaseInstallations
+import com.entity.unity.notification.NotificationSettings
 import com.google.firebase.messaging.FirebaseMessaging
 import java.lang.Exception
 

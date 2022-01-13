@@ -4,16 +4,13 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 
 
-import com.entity.data.Message
+import com.entity.unity.model.Message
 import com.entity.uibot.MessagingAdapter
 
 import com.entity.unity.R
-import com.entity.unity.R.layout
 import com.entity.unity.utils.BotResponse
 import com.entity.unity.utils.Constants.OPEN_GOOGLE
 import com.entity.unity.utils.Constants.OPEN_SEARCH

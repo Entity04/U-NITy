@@ -1,4 +1,4 @@
-package com.entity.unity
+package com.entity.unity.notification
 
 class NotificationSettings {
     var HubName = "esv"

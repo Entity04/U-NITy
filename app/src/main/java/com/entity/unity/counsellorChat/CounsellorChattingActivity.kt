@@ -10,7 +10,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.entity.unity.FirebaseServ
 import com.entity.unity.R
 import com.entity.unity.VideoActivity
 import com.entity.unity.adapter.CounsellorMessageAdapter

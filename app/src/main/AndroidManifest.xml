@@ -71,7 +71,7 @@
         </activity>
 
         <service
-            android:name=".FirebaseServ"
+            android:name=".videocall.FirebaseServ"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"
@@ -80,7 +80,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".RegistrationIntentService"
+            android:name=".videocall.RegistrationIntentService"
             android:exported="false">
         </service>
         <meta-data

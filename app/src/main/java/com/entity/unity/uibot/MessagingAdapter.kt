@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 
-import com.entity.data.Message
+import com.entity.unity.model.Message
 
 import com.entity.unity.R
 import com.entity.unity.utils.Constants.RECEIVE_ID

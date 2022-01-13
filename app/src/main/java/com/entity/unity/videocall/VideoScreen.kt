@@ -17,13 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.entity.unity.constants.Constants
 import com.entity.unity.counsellorChat.CounsellorHome
-import com.entity.unity.ui.counsellor.CounsellorFragment
+import com.entity.unity.videocall.APP_ID
 import com.google.firebase.auth.FirebaseAuth
 import io.agora.agorauikit_android.AgoraSettings
-import android.R
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import com.entity.unity.studentChat.ChattingActivity
+import com.entity.unity.videocall.VideoActivity
+import com.entity.unity.videocall.VideoViewmodel
 
 
 @ExperimentalUnsignedTypes
@@ -74,7 +72,7 @@ fun VideoScreen(
                 AgoraVideoViewer(
                     it, connectionData = AgoraConnectionData(
                         appId = APP_ID,
-                    ),agoraSettings=VideoActivity().uisettings()
+                    ),agoraSettings= VideoActivity().uisettings()
                 ).also {
                     it.join(roomName)
                     agoraView = it

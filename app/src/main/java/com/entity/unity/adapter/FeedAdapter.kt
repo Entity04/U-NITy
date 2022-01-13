@@ -1,26 +1,18 @@
 package com.entity.unity.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.BitmapFactory
-import android.media.Image
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
-import androidx.compose.material.SnackbarDuration
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.entity.unity.FirebaseServ
-import com.entity.unity.MainActivity2
 import com.entity.unity.R
 import com.entity.unity.model.Post
-import com.entity.unity.ui.health.HealthFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
