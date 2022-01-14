@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/my_profile_btn_update_marginTop"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/btn_bg"
                     android:foreground="?attr/selectableItemBackground"
                     android:gravity="center"
                     android:paddingTop="@dimen/btn_paddingTopBottom"

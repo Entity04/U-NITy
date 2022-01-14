@@ -11,6 +11,8 @@ import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.R
+import com.entity.unity.Vc2
+import com.entity.unity.VcActivity
 import com.entity.unity.videocall.VideoActivity
 import com.entity.unity.adapter.CounsellorMessageAdapter
 import com.entity.unity.model.MessageData
@@ -99,7 +101,7 @@ class CounsellorChattingActivity : AppCompatActivity() {
                 return true
             }
             R.id.vc->{
-                startActivity(Intent(this, VideoActivity::class.java))
+                startActivity(Intent(this, Vc2::class.java))
             }
         }
         return super.onOptionsItemSelected(item)

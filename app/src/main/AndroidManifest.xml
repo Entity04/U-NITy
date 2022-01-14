@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNITy">
         <activity
+            android:name=".Vc2"
+            android:exported="false" />
+        <activity
             android:name=".MyProfile"
             android:exported="false" />
         <activity
@@ -43,7 +46,7 @@
             android:name=".uibot.Chatbot"
             android:exported="false" />
         <activity
-            android:name=".VideoActivity"
+            android:name=".videocall.VideoActivity"
             android:exported="false" />
         <activity
             android:name=".CreateFeed"
@@ -83,11 +86,15 @@
         </service>
         <service
             android:name=".videocall.RegistrationIntentService"
-            android:exported="false"></service>
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".VcActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

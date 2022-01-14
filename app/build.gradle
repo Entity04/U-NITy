@@ -39,7 +39,7 @@ android {
 
     }
     composeOptions {
-        //kotlinCompilerVersion '1.5.31'
+       kotlinCompilerVersion '1.5.31'
         kotlinCompilerExtensionVersion '1.0.5'
     }
     dataBinding {
@@ -65,7 +65,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
     implementation("androidx.navigation:navigation-compose:2.4.0-rc01")
-
+    implementation('org.jitsi.react:jitsi-meet-sdk:2.9.0'){ transitive =
+            true
+    }
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
     // ViewModel utilities for Compose

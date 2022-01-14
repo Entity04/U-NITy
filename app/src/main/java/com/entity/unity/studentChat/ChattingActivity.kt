@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.entity.unity.MessageAdapter
 import com.entity.unity.R
+import com.entity.unity.VcActivity
 import com.entity.unity.videocall.VideoActivity
 import com.entity.unity.model.MessageData
 import com.entity.unity.model.Student
@@ -121,7 +122,7 @@ class ChattingActivity : AppCompatActivity() {
                 return true
             }
             R.id.vc->{
-                startActivity(Intent(this, VideoActivity::class.java))
+                startActivity(Intent(this, VcActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".Vc2">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sniglet_extrabold"
+        android:gravity="center"
+        android:text="Welcome to Video Chat Portal of Unity"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="25sp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_iv"/>
+
+    <!--EditText for taking input room name from user-->
+    <EditText
+        android:id="@+id/conferenceName"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_margin="12dp"
+        android:hint="Enter room name" />
+
+
+
+    <!--Button for creating a room for video
+        calling by it's clicking event-->
+    <!--When clicking event occur on button
+        then onButtonClick method will call -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_margin="12dp"
+
+        android:background="@drawable/btn_bg"
+        android:onClick="onButtonClick"
+
+        android:text="Create And Enter"
+
+        android:textColor="#FFFFFF" />
+
+
+
+</LinearLayout>
