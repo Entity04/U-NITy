@@ -24,7 +24,7 @@ class VcActivity : AppCompatActivity() {
             // class by the name of options
             val options = JitsiMeetConferenceOptions.Builder()
                 .setServerURL(URL("https://meet.jit.si"))
-                .setWelcomePageEnabled(false)
+
                 .build()
         } catch (e: MalformedURLException) {
             e.printStackTrace()
