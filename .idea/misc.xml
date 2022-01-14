@@ -13,7 +13,6 @@
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_create_feed.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_my_profile.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_splash.xml" value="0.18342391304347827" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_vc2.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/feed_item.xml" value="0.536" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_health.xml" value="0.4" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/layout/message_item.xml" value="0.18342391304347827" />
@@ -31,7 +30,13 @@
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatbot.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_chatting.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_login.xml" value="0.2" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_counsellor_register.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_email_pass_login.xml" value="0.2" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_main2.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_my_profile.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_vc.xml" value="0.1" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/activity_vc2.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/message_item.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/U-NITy/app/src/main/res/layout/nav_header_main.xml" value="0.1" />

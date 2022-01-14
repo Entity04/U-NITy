@@ -17,7 +17,7 @@ class Vc2 : AppCompatActivity() {
             // object creation of JitsiMeetConferenceOptions
             // class by the name of options
             val options = JitsiMeetConferenceOptions.Builder()
-                .setServerURL(URL(""))
+                .setServerURL(URL("https://meet.jit.si"))
                 .setWelcomePageEnabled(false)
                 .build()
         } catch (e: MalformedURLException) {
@@ -43,7 +43,15 @@ class Vc2 : AppCompatActivity() {
             val options = JitsiMeetConferenceOptions.Builder()
                 .setRoom(text)
                 .build()
+
             JitsiMeetActivity.launch(this, options)
+
         }
+
+    }
+
+    override fun onUserLeaveHint() {
+
+        super.onUserLeaveHint()
     }
 }

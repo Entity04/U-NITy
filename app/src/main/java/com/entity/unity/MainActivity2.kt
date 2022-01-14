@@ -91,6 +91,7 @@ startActivity(Intent(this, Chatbot::class.java))
 
 
 
+
     fun ToastNotify(notificationMessage: String?) {
         runOnUiThread {
             Toast.makeText(this@MainActivity2, notificationMessage, Toast.LENGTH_LONG).show()
@@ -140,6 +141,7 @@ startActivity(Intent(this, Chatbot::class.java))
         if (binding.container.isDrawerOpen(GravityCompat.START)) {
             binding.container.closeDrawer(GravityCompat.START)
         } else {
+            finish()
             super.onBackPressed()
         }
     }
