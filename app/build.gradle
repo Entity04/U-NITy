@@ -17,7 +17,7 @@ android {
     defaultConfig {
         applicationId "com.entity.unity"
         minSdk 26
-        targetSdk 31
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 

@@ -35,11 +35,9 @@
 
 
 
-    <!--Button for creating a room for video
-        calling by it's clicking event-->
-    <!--When clicking event occur on button
-        then onButtonClick method will call -->
+
     <Button
+
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_margin="12dp"
