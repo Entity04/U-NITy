@@ -45,7 +45,6 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.karumi.dexter.listener.single.PermissionListener
 import de.hdodenhof.circleimageview.CircleImageView
-import kotlinx.android.synthetic.main.activity_my_profile.*
 import java.io.File
 import java.util.*
 
@@ -61,7 +60,7 @@ class MyProfile : AppCompatActivity() {
     private var storageReference: StorageReference? = null
     private var filePath: Uri? = null
     private lateinit var mBinding: ActivityMyProfileBinding
-    val postid: String = UUID.randomUUID().toString()
+    lateinit var profileid: String
     private lateinit var etName: EditText
     private lateinit var tvEmail: TextView
     private lateinit var tvRole: TextView
@@ -91,7 +90,7 @@ class MyProfile : AppCompatActivity() {
         }
 
         tvEmail.text=FirebaseAuth.getInstance().currentUser?.email
-
+        profileid= FirebaseAuth.getInstance().currentUser?.uid.toString()
         imgProfile.setOnClickListener {
             customImageSelectionDialog()
         }
@@ -258,10 +257,10 @@ class MyProfile : AppCompatActivity() {
 
     private fun uploadImage() {
         if (filePath != null) {
-            val ref = storageReference!!.child("Profile/$postid")
+            val ref = storageReference!!.child("Profile/$profileid")
             ref.putFile(filePath!!)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Uploaded", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Updated", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Failed " + e.message, Toast.LENGTH_SHORT)
