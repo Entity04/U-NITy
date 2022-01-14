@@ -3,6 +3,7 @@ package com.entity.unity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import android.view.View
 import com.entity.unity.constants.Constants
@@ -52,7 +53,16 @@ class SplashActivity : AppCompatActivity() {
                 }
             })
         } else {
-            startActivity(Intent(this, ChosserActivity::class.java))
+            Thread {
+                try {
+                    SystemClock.sleep(3500)
+                } catch (ex: Exception) {
+                    ex.printStackTrace()
+                } finally {
+                    startActivity(Intent(this, ChosserActivity::class.java))
+                    finish()
+                }
+            }.start()
         }
     }
 }
