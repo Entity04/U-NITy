@@ -43,19 +43,20 @@
                     android:background="@drawable/dots_menu"
                     android:clickable="true" />
 
-                    <TextView
-                        android:id="@+id/postDescription"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="5dp"
-                        android:ellipsize="end"
-                        android:fontFamily="@font/roboto_light"
-                        android:includeFontPadding="false"
-                        android:maxLines="6"
-                        android:text="@string/post_description"
-                        android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/postDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_light"
+                    android:includeFontPadding="false"
+                    android:maxLines="6"
+                    android:text="@string/post_description"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
 
 
