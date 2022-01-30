@@ -53,6 +53,7 @@ class MainActivity2 : AppCompatActivity() {
             setOf(
                 R.id.navigation_mentalhealth,
                 R.id.navigation_counsellor,
+                R.id.navigation_meme
             ), binding.container
         )
         binding.navView.setupWithNavController(navController)
@@ -71,7 +72,7 @@ class MainActivity2 : AppCompatActivity() {
                     finish()
                 }
                 R.id.chatbot->{
-startActivity(Intent(this, Chatbot::class.java))
+                    startActivity(Intent(this, Chatbot::class.java))
                 }
                 R.id.nav_my_profile->{
                     startActivity(Intent(this,MyProfile::class.java))

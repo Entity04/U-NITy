@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Projects/Hackathon/Unity/U-NITy/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects/Hackathon/Unity/U-NITy/app/src/main/res/layout/activity_main2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects/Hackathon/Unity/U-NITy/app/src/main/res/layout/fragment_counsellor.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects/Hackathon/Unity/U-NITy/app/src/main/res/layout/fragment_health.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects/Hackathon/Unity/U-NITy/app/src/main/res/layout/fragment_memes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects/Hackathon/Unity/U-NITy/app/src/main/res/layout/message_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects/Hackathon/Unity/U-NITy/app/src/main/res/layout/sent_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects/Hackathon/Unity/U-NITy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_blue_thumb_up.xml" value="0.290625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/ic_thums_up.xml" value="0.290625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/U-NITy/app/src/main/res/drawable/receive_round_box.xml" value="0.290625" />

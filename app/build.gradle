@@ -95,6 +95,7 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.4.0'
     implementation "com.github.AgoraIO-Community:Android-UIKit:v2.0.0"
     implementation 'androidx.navigation:navigation-runtime-ktx:2.3.5'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     //implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
     //implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
@@ -118,6 +119,11 @@ dependencies {
     implementation 'com.karumi:dexter:6.2.2'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation 'com.airbnb.android:lottie:4.2.2'
+
+    //volley & Glide
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
 
 }

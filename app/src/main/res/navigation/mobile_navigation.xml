@@ -16,6 +16,11 @@
         android:name="com.entity.unity.ui.counsellor.CounsellorFragment"
         android:label="@string/nav_counselor"
         tools:layout="@layout/fragment_counsellor" />
+    <fragment
+        android:id="@+id/navigation_meme"
+        android:name="com.entity.unity.ui.memes.MemesFragment"
+        android:label="@string/memes"
+        tools:layout="@layout/fragment_memes" />
 
 
 </navigation>

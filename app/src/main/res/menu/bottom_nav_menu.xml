@@ -11,5 +11,9 @@
         android:icon="@drawable/ic_nav_user"
         android:title="@string/nav_counselor"
         />
+    <item
+        android:id="@+id/navigation_meme"
+        android:icon="@drawable/iconmeme"
+        android:title="@string/memes"/>
 
 </menu>
